@@ -1,0 +1,128 @@
+# Linux verification build + headless smoke test (Horizon Mobile, Unity 6).
+#
+# WHAT IT DOES
+#   1. Checks out the repo (with Git LFS for the 3 map files over 100 MB).
+#   2. Builds the Linux x86_64 player with GameCI (Unity 6000.3.28f1),
+#      using the project's BuildLinuxTextureFix.Build method (MainMenu
+#      first, StandaloneLinux64, Mono, OpenGLCore, 1280x720 windowed).
+#   3. Launches the built game headless under Xvfb, screenshots the menu
+#      at ~90 s and ~150 s, and uploads the screenshots + Player.log.
+#   4. Does NOT upload the built Linux binary (~1.9 GB). GitHub's free
+#      artifact storage is 500 MB, so only screenshots + logs are kept.
+#      The binary stays on the runner and is discarded when the job ends.
+#
+# UNITY LICENSE — READ THIS FIRST, THE BUILD CANNOT RUN WITHOUT IT
+#   The job needs a UNITY_LICENSE repo secret (the .ulf license file).
+#   Until that secret exists the build step fails at activation.
+#   Exact steps for the user (see also .github/CI-SETUP.md):
+#     a. Add UNITY_EMAIL and UNITY_PASSWORD as repo secrets (your Unity ID).
+#     b. Run this workflow once (Actions tab -> this workflow -> Run).
+#        It fails at activation but uploads a manual activation file
+#        (.alf) as the "unity-activation-file" artifact.
+#     c. Download the .alf, open https://license.unity3d.com/manual,
+#        upload the .alf, download the .ulf license file.
+#     d. Add the whole .ulf file content as a repo secret named
+#        UNITY_LICENSE (Settings -> Secrets and variables -> Actions).
+#     e. Re-run the workflow. It now activates with UNITY_LICENSE and
+#        the build proceeds.
+#   Do not claim the CI build works until a run has actually succeeded
+#   with the UNITY_LICENSE secret in place.
+#
+# BUILD OUTPUT PATH
+#   BuildLinuxTextureFix.Build writes to the absolute local path
+#   /home/hatch/workspace/HorizonMobileGame-Linux-TextureFix/ (the path
+#   used on the dev VM). The workflow creates that directory on the
+#   runner first (sudo mkdir + chown) so the same build method works
+#   unmodified on CI. No project file is changed for CI.
+#
+# TEXTURE CAP
+#   The project currently has a temporary 128px texture cap
+#   (CapPlateauTextures.cs) so the Linux build fits in memory. Facades
+#   look softer in this verification build. The 256px design target is
+#   restored once a build fits; see CapPlateauTextures.cs.
+
+name: Linux build (TextureFix) + smoke test
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: Build Linux + smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout (with LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
+          df -h
+
+      - name: Create the local build output path
+        run: |
+          sudo mkdir -p /home/hatch/workspace
+          sudo chown -R "$USER:$USER" /home/hatch/workspace
+
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-Linux-TextureFix-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-Linux-TextureFix-
+
+      - name: Build Linux player (GameCI)
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 6000.3.28f1
+          targetPlatform: StandaloneLinux64
+          buildMethod: BuildLinuxTextureFix.Build
+          versioning: None
+
+      - name: Upload manual activation file (only if activation failed)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-activation-file
+          path: |
+            **/*.alf
+          if-no-files-found: ignore
+
+      - name: Verify the built binary exists
+        run: |
+          BIN=/home/hatch/workspace/HorizonMobileGame-Linux-TextureFix/HorizonMobile.x86_64
+          test -x "$BIN"
+          ls -lh "$BIN"
+
+      - name: Smoke test under Xvfb (launch + screenshot the menu)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb imagemagick > /dev/null
+          BIN=/home/hatch/workspace/HorizonMobileGame-Linux-TextureFix/HorizonMobile.x86_64
+          mkdir -p smoke
+          xvfb-run -a -s "-screen 0 1280x720x24" "$BIN" -logFile smoke/Player.log > smoke/run.log 2>&1 &
+          APP_PID=$!
+          sleep 90
+          import -window root smoke/menu-90s.png || true
+          sleep 60
+          import -window root smoke/menu-150s.png || true
+          kill "$APP_PID" || true
+          wait "$APP_PID" || true
+          ls -lh smoke/
+
+      - name: Upload smoke screenshots + logs (small artifacts only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-smoke-${{ github.sha }}
+          path: smoke/
+          if-no-files-found: warn

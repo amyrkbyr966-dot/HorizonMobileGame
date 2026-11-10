@@ -1,0 +1,5085 @@
+{
+ "seed": 20261109,
+ "touge_gate": [
+  -2900.0,
+  0.0,
+  2400.0
+ ],
+ "touge_summit": [
+  -3300.0,
+  205.0,
+  3300.0
+ ],
+ "mountains": [
+  {
+   "name": "NW_Touge",
+   "rect": [
+    -3850,
+    2672,
+    -2931,
+    3850
+   ],
+   "peak": 220,
+   "kind": "spline-ridge"
+  },
+  {
+   "name": "SE",
+   "rect": [
+    2959,
+    -3850,
+    3850,
+    -2865
+   ],
+   "peak": 170,
+   "kind": "edge-ramp"
+  },
+  {
+   "name": "S",
+   "rect": [
+    -1117,
+    -3850,
+    3850,
+    -3273
+   ],
+   "peak": 120,
+   "kind": "edge-ramp"
+  },
+  {
+   "name": "SW",
+   "rect": [
+    -3850,
+    -3850,
+    -2862,
+    -3273
+   ],
+   "peak": 100,
+   "kind": "edge-ramp"
+  }
+ ],
+ "foothills": {
+  "name": "West_Foothills",
+  "rect": [
+   -3850,
+   -3273,
+   -2862,
+   842
+  ],
+  "peak": 40
+ },
+ "roads": [
+  {
+   "name": "Road_North",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    0,
+    1750
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_South",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    0,
+    -2160
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_East",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    2000,
+    0
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_West",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    -1950,
+    1750
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_NE",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    2030,
+    1830
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_SE",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    2050,
+    -1950
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_Asakusa_Shinjuku",
+   "from": [
+    0,
+    1750
+   ],
+   "to": [
+    2030,
+    1830
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_Asakusa_Ueno",
+   "from": [
+    0,
+    1750
+   ],
+   "to": [
+    -1950,
+    1750
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_Akihabara_TokyoBay",
+   "from": [
+    2050,
+    -1950
+   ],
+   "to": [
+    0,
+    -2160
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_Ginza_Shinjuku",
+   "from": [
+    2000,
+    0
+   ],
+   "to": [
+    2030,
+    1830
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_Ginza_Akihabara",
+   "from": [
+    2000,
+    0
+   ],
+   "to": [
+    2050,
+    -1950
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_Ueno_Residential",
+   "from": [
+    -1950,
+    1750
+   ],
+   "to": [
+    -2400,
+    -2400
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_Residential_TokyoBay",
+   "from": [
+    -2400,
+    -2400
+   ],
+   "to": [
+    0,
+    -2160
+   ],
+   "width": 24,
+   "ring": true
+  },
+  {
+   "name": "Road_Touge_Access",
+   "from": [
+    -1950,
+    1750
+   ],
+   "to": [
+    -2900,
+    2400
+   ],
+   "width": 12,
+   "ring": false
+  },
+  {
+   "name": "Road_Ginza_NS1",
+   "from": [
+    1500,
+    -900
+   ],
+   "to": [
+    1500,
+    900
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_Ginza_NS2",
+   "from": [
+    2500,
+    -900
+   ],
+   "to": [
+    2500,
+    900
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_Ginza_EW1",
+   "from": [
+    1100,
+    -500
+   ],
+   "to": [
+    2900,
+    -500
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_Ginza_EW2",
+   "from": [
+    1100,
+    500
+   ],
+   "to": [
+    2900,
+    500
+   ],
+   "width": 16,
+   "ring": false
+  },
+  {
+   "name": "Road_Res_NS1",
+   "from": [
+    -1800,
+    -3500
+   ],
+   "to": [
+    -1800,
+    -1300
+   ],
+   "width": 12,
+   "ring": false
+  },
+  {
+   "name": "Road_Res_NS2",
+   "from": [
+    -2400,
+    -3500
+   ],
+   "to": [
+    -2400,
+    -1300
+   ],
+   "width": 12,
+   "ring": false
+  },
+  {
+   "name": "Road_Res_NS3",
+   "from": [
+    -3000,
+    -3500
+   ],
+   "to": [
+    -3000,
+    -1300
+   ],
+   "width": 12,
+   "ring": false
+  },
+  {
+   "name": "Road_Res_EW1",
+   "from": [
+    -3500,
+    -1800
+   ],
+   "to": [
+    -1300,
+    -1800
+   ],
+   "width": 12,
+   "ring": false
+  },
+  {
+   "name": "Road_Res_EW2",
+   "from": [
+    -3500,
+    -2400
+   ],
+   "to": [
+    -1300,
+    -2400
+   ],
+   "width": 12,
+   "ring": false
+  },
+  {
+   "name": "Road_Res_EW3",
+   "from": [
+    -3500,
+    -3000
+   ],
+   "to": [
+    -1300,
+    -3000
+   ],
+   "width": 12,
+   "ring": false
+  }
+ ],
+ "ring_segments": [
+  "Road_East",
+  "Road_Ginza_Akihabara",
+  "Road_Akihabara_TokyoBay",
+  "Road_Residential_TokyoBay",
+  "Road_Ueno_Residential",
+  "Road_Asakusa_Ueno",
+  "Road_Asakusa_Shinjuku",
+  "Road_NE"
+ ],
+ "tran_districts": [
+  "shibuya",
+  "tokyo-bay"
+ ],
+ "trees": [
+  {
+   "x": -3634.7,
+   "z": 865.4,
+   "type": "detailed",
+   "scale": 0.91,
+   "rot": 133.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3792.7,
+   "z": 783.5,
+   "type": "pine",
+   "scale": 1.6,
+   "rot": 73.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3042.2,
+   "z": 228.5,
+   "type": "pine",
+   "scale": 1.1,
+   "rot": 144.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3278.9,
+   "z": 625.3,
+   "type": "detailed",
+   "scale": 1.42,
+   "rot": 31.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3633.7,
+   "z": 61.1,
+   "type": "detailed",
+   "scale": 1.48,
+   "rot": 47.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3110.4,
+   "z": 767.6,
+   "type": "detailed",
+   "scale": 1.49,
+   "rot": 119.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3173.8,
+   "z": -604.9,
+   "type": "detailed",
+   "scale": 1.54,
+   "rot": 85.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3449.0,
+   "z": 33.3,
+   "type": "oak",
+   "scale": 1.5,
+   "rot": 343.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3395.4,
+   "z": -173.6,
+   "type": "pine",
+   "scale": 0.8,
+   "rot": 311.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3622.1,
+   "z": -560.9,
+   "type": "pine",
+   "scale": 1.12,
+   "rot": 24.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3700.7,
+   "z": -139.0,
+   "type": "oak",
+   "scale": 1.44,
+   "rot": 244.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3416.4,
+   "z": -70.6,
+   "type": "detailed",
+   "scale": 1.0,
+   "rot": 96.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2940.0,
+   "z": -248.5,
+   "type": "oak",
+   "scale": 0.83,
+   "rot": 193.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3471.0,
+   "z": 165.7,
+   "type": "pine",
+   "scale": 1.32,
+   "rot": 134.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3725.0,
+   "z": 409.1,
+   "type": "oak",
+   "scale": 0.96,
+   "rot": 19.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3484.8,
+   "z": 461.6,
+   "type": "detailed",
+   "scale": 1.51,
+   "rot": 179.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3126.1,
+   "z": -32.2,
+   "type": "detailed",
+   "scale": 1.4,
+   "rot": 355.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3199.3,
+   "z": 282.4,
+   "type": "pine",
+   "scale": 0.83,
+   "rot": 325.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3390.5,
+   "z": -674.5,
+   "type": "oak",
+   "scale": 1.28,
+   "rot": 126.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3053.3,
+   "z": 684.3,
+   "type": "oak",
+   "scale": 0.81,
+   "rot": 112.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3725.9,
+   "z": -718.1,
+   "type": "oak",
+   "scale": 1.08,
+   "rot": 119.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3661.1,
+   "z": -750.9,
+   "type": "pine",
+   "scale": 0.91,
+   "rot": 52.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2993.7,
+   "z": 617.1,
+   "type": "pine",
+   "scale": 0.87,
+   "rot": 331.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3174.4,
+   "z": 530.3,
+   "type": "oak",
+   "scale": 1.19,
+   "rot": 78.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2929.4,
+   "z": -700.5,
+   "type": "detailed",
+   "scale": 0.83,
+   "rot": 64.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3348.0,
+   "z": -62.7,
+   "type": "pine",
+   "scale": 1.29,
+   "rot": 313.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3300.7,
+   "z": 549.4,
+   "type": "oak",
+   "scale": 1.5,
+   "rot": 203.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3456.3,
+   "z": 628.2,
+   "type": "detailed",
+   "scale": 1.6,
+   "rot": 228.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3774.3,
+   "z": 44.1,
+   "type": "pine",
+   "scale": 1.05,
+   "rot": 266.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3075.7,
+   "z": 571.9,
+   "type": "detailed",
+   "scale": 0.82,
+   "rot": 203.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3596.9,
+   "z": 296.3,
+   "type": "oak",
+   "scale": 1.3,
+   "rot": 349.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3780.8,
+   "z": 318.4,
+   "type": "oak",
+   "scale": 1.0,
+   "rot": 233.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3757.0,
+   "z": -538.7,
+   "type": "pine",
+   "scale": 1.06,
+   "rot": 78.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3591.1,
+   "z": -601.9,
+   "type": "oak",
+   "scale": 1.18,
+   "rot": 242.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3175.1,
+   "z": -797.7,
+   "type": "detailed",
+   "scale": 0.98,
+   "rot": 12.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3453.4,
+   "z": -724.9,
+   "type": "pine",
+   "scale": 1.57,
+   "rot": 286.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3283.4,
+   "z": 823.3,
+   "type": "oak",
+   "scale": 1.37,
+   "rot": 180.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3278.9,
+   "z": 871.3,
+   "type": "pine",
+   "scale": 1.46,
+   "rot": 229.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3112.5,
+   "z": -770.0,
+   "type": "detailed",
+   "scale": 1.4,
+   "rot": 77.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3010.6,
+   "z": 580.4,
+   "type": "detailed",
+   "scale": 0.97,
+   "rot": 182.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3449.2,
+   "z": -455.1,
+   "type": "oak",
+   "scale": 1.18,
+   "rot": 284.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3171.9,
+   "z": 52.0,
+   "type": "pine",
+   "scale": 1.34,
+   "rot": 256.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3464.1,
+   "z": -174.0,
+   "type": "oak",
+   "scale": 0.87,
+   "rot": 336.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3713.5,
+   "z": -341.3,
+   "type": "pine",
+   "scale": 0.91,
+   "rot": 172.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3146.6,
+   "z": 664.4,
+   "type": "pine",
+   "scale": 1.38,
+   "rot": 162.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2940.3,
+   "z": -18.7,
+   "type": "oak",
+   "scale": 0.93,
+   "rot": 192.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3300.7,
+   "z": 121.9,
+   "type": "pine",
+   "scale": 1.39,
+   "rot": 208.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3339.9,
+   "z": -470.8,
+   "type": "detailed",
+   "scale": 1.03,
+   "rot": 335.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3319.8,
+   "z": -740.7,
+   "type": "detailed",
+   "scale": 0.97,
+   "rot": 162.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2950.3,
+   "z": 904.4,
+   "type": "detailed",
+   "scale": 1.45,
+   "rot": 171.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3160.9,
+   "z": 103.5,
+   "type": "oak",
+   "scale": 0.82,
+   "rot": 55.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3567.5,
+   "z": 576.1,
+   "type": "pine",
+   "scale": 1.47,
+   "rot": 280.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3743.9,
+   "z": 222.0,
+   "type": "oak",
+   "scale": 0.92,
+   "rot": 141.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3618.2,
+   "z": 228.9,
+   "type": "oak",
+   "scale": 1.17,
+   "rot": 354.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3218.4,
+   "z": 539.4,
+   "type": "pine",
+   "scale": 1.24,
+   "rot": 13.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3176.9,
+   "z": -530.4,
+   "type": "detailed",
+   "scale": 1.45,
+   "rot": 248.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3463.3,
+   "z": 808.3,
+   "type": "pine",
+   "scale": 1.16,
+   "rot": 70.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2997.4,
+   "z": -781.6,
+   "type": "oak",
+   "scale": 1.48,
+   "rot": 279.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2927.3,
+   "z": 314.3,
+   "type": "oak",
+   "scale": 1.43,
+   "rot": 26.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3565.5,
+   "z": 488.5,
+   "type": "oak",
+   "scale": 1.1,
+   "rot": 295.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3709.8,
+   "z": -774.3,
+   "type": "detailed",
+   "scale": 1.15,
+   "rot": 205.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3249.6,
+   "z": 555.1,
+   "type": "pine",
+   "scale": 1.03,
+   "rot": 31.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3781.8,
+   "z": 688.9,
+   "type": "oak",
+   "scale": 1.35,
+   "rot": 205.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3487.9,
+   "z": 649.1,
+   "type": "oak",
+   "scale": 1.47,
+   "rot": 125.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3743.9,
+   "z": 835.0,
+   "type": "oak",
+   "scale": 1.28,
+   "rot": 250.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3217.8,
+   "z": -558.6,
+   "type": "oak",
+   "scale": 1.27,
+   "rot": 149.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3377.5,
+   "z": 654.8,
+   "type": "oak",
+   "scale": 1.56,
+   "rot": 331.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3277.8,
+   "z": 80.8,
+   "type": "detailed",
+   "scale": 1.32,
+   "rot": 142.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3018.6,
+   "z": -651.2,
+   "type": "pine",
+   "scale": 1.56,
+   "rot": 344.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2917.0,
+   "z": -448.5,
+   "type": "detailed",
+   "scale": 1.48,
+   "rot": 213.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3220.9,
+   "z": -711.5,
+   "type": "pine",
+   "scale": 1.31,
+   "rot": 96.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3064.1,
+   "z": -68.5,
+   "type": "pine",
+   "scale": 1.34,
+   "rot": 49.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3799.1,
+   "z": 840.5,
+   "type": "oak",
+   "scale": 0.89,
+   "rot": 89.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3615.1,
+   "z": -739.3,
+   "type": "oak",
+   "scale": 0.81,
+   "rot": 266.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3326.2,
+   "z": -267.0,
+   "type": "oak",
+   "scale": 1.38,
+   "rot": 272.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3302.4,
+   "z": 800.0,
+   "type": "detailed",
+   "scale": 1.52,
+   "rot": 334.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3353.2,
+   "z": -721.2,
+   "type": "pine",
+   "scale": 0.86,
+   "rot": 126.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3439.0,
+   "z": 729.1,
+   "type": "oak",
+   "scale": 1.1,
+   "rot": 131.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3017.3,
+   "z": -157.3,
+   "type": "pine",
+   "scale": 1.47,
+   "rot": 149.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2998.2,
+   "z": 489.7,
+   "type": "oak",
+   "scale": 1.49,
+   "rot": 42.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3006.8,
+   "z": -99.6,
+   "type": "pine",
+   "scale": 1.24,
+   "rot": 178.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3617.4,
+   "z": -576.6,
+   "type": "oak",
+   "scale": 1.58,
+   "rot": 131.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3306.1,
+   "z": -760.1,
+   "type": "pine",
+   "scale": 0.81,
+   "rot": 357.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3058.6,
+   "z": 32.9,
+   "type": "oak",
+   "scale": 0.88,
+   "rot": 192.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3029.9,
+   "z": -329.3,
+   "type": "detailed",
+   "scale": 1.36,
+   "rot": 74.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3408.4,
+   "z": 314.1,
+   "type": "pine",
+   "scale": 1.58,
+   "rot": 331.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3606.6,
+   "z": -547.6,
+   "type": "oak",
+   "scale": 1.51,
+   "rot": 160.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3714.9,
+   "z": -77.4,
+   "type": "oak",
+   "scale": 1.33,
+   "rot": 188.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3293.3,
+   "z": -55.5,
+   "type": "oak",
+   "scale": 1.12,
+   "rot": 231.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3611.5,
+   "z": -656.4,
+   "type": "pine",
+   "scale": 1.56,
+   "rot": 147.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2941.2,
+   "z": -35.0,
+   "type": "oak",
+   "scale": 1.57,
+   "rot": 156.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3300.7,
+   "z": -26.6,
+   "type": "pine",
+   "scale": 1.17,
+   "rot": 339.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3667.2,
+   "z": 34.5,
+   "type": "oak",
+   "scale": 0.93,
+   "rot": 275.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3711.1,
+   "z": 693.6,
+   "type": "pine",
+   "scale": 0.99,
+   "rot": 262.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3700.9,
+   "z": 775.6,
+   "type": "pine",
+   "scale": 1.22,
+   "rot": 294.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3091.1,
+   "z": -426.8,
+   "type": "detailed",
+   "scale": 1.38,
+   "rot": 359.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3564.8,
+   "z": -696.1,
+   "type": "pine",
+   "scale": 0.82,
+   "rot": 18.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3365.1,
+   "z": -276.6,
+   "type": "pine",
+   "scale": 1.15,
+   "rot": 29.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3422.9,
+   "z": 315.1,
+   "type": "pine",
+   "scale": 1.23,
+   "rot": 318.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3003.4,
+   "z": -570.8,
+   "type": "pine",
+   "scale": 1.0,
+   "rot": 30.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3731.1,
+   "z": 784.0,
+   "type": "oak",
+   "scale": 1.51,
+   "rot": 48.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3085.4,
+   "z": -243.3,
+   "type": "oak",
+   "scale": 1.34,
+   "rot": 246.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3679.5,
+   "z": 687.4,
+   "type": "detailed",
+   "scale": 1.14,
+   "rot": 231.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3357.0,
+   "z": -400.3,
+   "type": "detailed",
+   "scale": 1.01,
+   "rot": 157.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3429.9,
+   "z": 589.4,
+   "type": "pine",
+   "scale": 0.96,
+   "rot": 141.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3323.5,
+   "z": 217.3,
+   "type": "pine",
+   "scale": 1.08,
+   "rot": 169.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3476.2,
+   "z": -750.7,
+   "type": "oak",
+   "scale": 0.91,
+   "rot": 180.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3353.2,
+   "z": -474.6,
+   "type": "detailed",
+   "scale": 0.87,
+   "rot": 185.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3443.7,
+   "z": -284.1,
+   "type": "detailed",
+   "scale": 1.05,
+   "rot": 77.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3481.4,
+   "z": 273.5,
+   "type": "oak",
+   "scale": 1.11,
+   "rot": 177.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2971.2,
+   "z": 630.5,
+   "type": "oak",
+   "scale": 1.55,
+   "rot": 246.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3737.8,
+   "z": -532.1,
+   "type": "pine",
+   "scale": 1.3,
+   "rot": 94.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3110.2,
+   "z": -456.7,
+   "type": "pine",
+   "scale": 1.42,
+   "rot": 295.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2964.3,
+   "z": -1.6,
+   "type": "oak",
+   "scale": 1.26,
+   "rot": 104.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3777.3,
+   "z": -791.7,
+   "type": "pine",
+   "scale": 1.15,
+   "rot": 15.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3755.9,
+   "z": 246.9,
+   "type": "oak",
+   "scale": 1.38,
+   "rot": 10.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3398.3,
+   "z": 185.0,
+   "type": "pine",
+   "scale": 1.56,
+   "rot": 135.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3187.0,
+   "z": -481.9,
+   "type": "oak",
+   "scale": 1.52,
+   "rot": 299.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3425.7,
+   "z": 493.0,
+   "type": "pine",
+   "scale": 0.82,
+   "rot": 214.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3115.3,
+   "z": -32.6,
+   "type": "pine",
+   "scale": 1.37,
+   "rot": 285.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3553.8,
+   "z": -624.0,
+   "type": "pine",
+   "scale": 1.41,
+   "rot": 297.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3226.9,
+   "z": -234.9,
+   "type": "pine",
+   "scale": 1.21,
+   "rot": 131.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2940.0,
+   "z": 606.3,
+   "type": "pine",
+   "scale": 0.97,
+   "rot": 64.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3685.9,
+   "z": 654.8,
+   "type": "oak",
+   "scale": 1.18,
+   "rot": 17.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2933.1,
+   "z": -317.8,
+   "type": "pine",
+   "scale": 1.28,
+   "rot": 93.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3745.1,
+   "z": 112.4,
+   "type": "pine",
+   "scale": 1.45,
+   "rot": 130.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3432.3,
+   "z": -552.8,
+   "type": "pine",
+   "scale": 1.46,
+   "rot": 55.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3259.6,
+   "z": 606.7,
+   "type": "detailed",
+   "scale": 0.98,
+   "rot": 350.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2924.9,
+   "z": 858.7,
+   "type": "detailed",
+   "scale": 1.52,
+   "rot": 117.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3564.5,
+   "z": -707.8,
+   "type": "detailed",
+   "scale": 1.32,
+   "rot": 350.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3655.6,
+   "z": -153.7,
+   "type": "oak",
+   "scale": 1.29,
+   "rot": 243.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3342.7,
+   "z": 729.3,
+   "type": "detailed",
+   "scale": 1.12,
+   "rot": 148.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2991.8,
+   "z": -770.6,
+   "type": "detailed",
+   "scale": 1.26,
+   "rot": 80.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3459.9,
+   "z": -289.0,
+   "type": "detailed",
+   "scale": 0.89,
+   "rot": 74.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3275.7,
+   "z": -746.8,
+   "type": "detailed",
+   "scale": 1.1,
+   "rot": 170.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3502.8,
+   "z": 372.9,
+   "type": "oak",
+   "scale": 1.17,
+   "rot": 196.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3234.1,
+   "z": -82.6,
+   "type": "oak",
+   "scale": 1.59,
+   "rot": 184.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3624.3,
+   "z": 149.4,
+   "type": "oak",
+   "scale": 1.27,
+   "rot": 174.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2999.6,
+   "z": -475.8,
+   "type": "pine",
+   "scale": 1.55,
+   "rot": 75.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2941.2,
+   "z": 539.0,
+   "type": "detailed",
+   "scale": 1.09,
+   "rot": 58.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3722.4,
+   "z": -213.2,
+   "type": "oak",
+   "scale": 1.0,
+   "rot": 19.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3201.2,
+   "z": -777.6,
+   "type": "oak",
+   "scale": 1.4,
+   "rot": 258.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3497.8,
+   "z": 793.1,
+   "type": "detailed",
+   "scale": 0.81,
+   "rot": 139.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3524.0,
+   "z": 605.9,
+   "type": "pine",
+   "scale": 1.29,
+   "rot": 349.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2970.8,
+   "z": -221.7,
+   "type": "pine",
+   "scale": 1.11,
+   "rot": 333.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3792.6,
+   "z": 871.6,
+   "type": "pine",
+   "scale": 1.49,
+   "rot": 6.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3597.5,
+   "z": -698.2,
+   "type": "detailed",
+   "scale": 0.86,
+   "rot": 135.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3737.9,
+   "z": 578.4,
+   "type": "detailed",
+   "scale": 1.54,
+   "rot": 313.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3338.9,
+   "z": -164.6,
+   "type": "pine",
+   "scale": 1.41,
+   "rot": 13.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3515.5,
+   "z": 759.8,
+   "type": "oak",
+   "scale": 1.44,
+   "rot": 150.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3527.4,
+   "z": 595.9,
+   "type": "detailed",
+   "scale": 1.44,
+   "rot": 332.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3158.3,
+   "z": -512.5,
+   "type": "detailed",
+   "scale": 1.37,
+   "rot": 300.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3301.3,
+   "z": -367.8,
+   "type": "pine",
+   "scale": 1.12,
+   "rot": 250.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3588.5,
+   "z": 103.3,
+   "type": "detailed",
+   "scale": 1.19,
+   "rot": 152.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3623.5,
+   "z": -105.3,
+   "type": "oak",
+   "scale": 1.11,
+   "rot": 147.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3474.8,
+   "z": 365.1,
+   "type": "pine",
+   "scale": 1.0,
+   "rot": 244.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3249.5,
+   "z": -490.7,
+   "type": "pine",
+   "scale": 1.22,
+   "rot": 355.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3014.3,
+   "z": 472.0,
+   "type": "pine",
+   "scale": 1.1,
+   "rot": 340.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2961.7,
+   "z": 858.7,
+   "type": "oak",
+   "scale": 1.26,
+   "rot": 331.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3748.0,
+   "z": -691.1,
+   "type": "pine",
+   "scale": 1.13,
+   "rot": 110.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3544.5,
+   "z": 88.3,
+   "type": "detailed",
+   "scale": 1.33,
+   "rot": 68.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3189.8,
+   "z": -681.3,
+   "type": "pine",
+   "scale": 1.33,
+   "rot": 101.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3217.0,
+   "z": 668.8,
+   "type": "pine",
+   "scale": 0.84,
+   "rot": 250.3,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3096.5,
+   "z": 838.9,
+   "type": "oak",
+   "scale": 1.42,
+   "rot": 304.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -2908.8,
+   "z": -351.2,
+   "type": "detailed",
+   "scale": 1.43,
+   "rot": 66.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3476.9,
+   "z": 686.9,
+   "type": "pine",
+   "scale": 0.81,
+   "rot": 133.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3505.0,
+   "z": 360.8,
+   "type": "detailed",
+   "scale": 1.43,
+   "rot": 247.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3768.1,
+   "z": 662.3,
+   "type": "oak",
+   "scale": 1.16,
+   "rot": 255.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3166.2,
+   "z": 44.3,
+   "type": "pine",
+   "scale": 0.85,
+   "rot": 155.2,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3032.2,
+   "z": 721.9,
+   "type": "oak",
+   "scale": 1.22,
+   "rot": 4.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3439.2,
+   "z": -41.2,
+   "type": "detailed",
+   "scale": 1.27,
+   "rot": 211.0,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3146.4,
+   "z": 128.8,
+   "type": "oak",
+   "scale": 1.23,
+   "rot": 111.5,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3751.9,
+   "z": 652.4,
+   "type": "oak",
+   "scale": 1.01,
+   "rot": 122.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3205.4,
+   "z": 151.1,
+   "type": "detailed",
+   "scale": 1.48,
+   "rot": 118.6,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3723.2,
+   "z": 718.7,
+   "type": "detailed",
+   "scale": 1.01,
+   "rot": 204.7,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3711.8,
+   "z": 736.6,
+   "type": "detailed",
+   "scale": 1.04,
+   "rot": 359.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3102.0,
+   "z": -581.9,
+   "type": "pine",
+   "scale": 1.46,
+   "rot": 195.4,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3263.7,
+   "z": 85.2,
+   "type": "detailed",
+   "scale": 0.97,
+   "rot": 4.9,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3260.6,
+   "z": 811.5,
+   "type": "oak",
+   "scale": 1.28,
+   "rot": 107.8,
+   "zone": "West_Forest"
+  },
+  {
+   "x": -3228.0,
+   "z": -95.4,
+   "type": "detailed",
+   "scale": 1.09,
+   "rot": 203.1,
+   "zone": "West_Forest"
+  },
+  {
+   "x": 3438.4,
+   "z": -1590.7,
+   "type": "oak",
+   "scale": 1.53,
+   "rot": 298.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3193.3,
+   "z": -1684.0,
+   "type": "pine",
+   "scale": 0.95,
+   "rot": 209.1,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3724.5,
+   "z": -1562.8,
+   "type": "oak",
+   "scale": 0.86,
+   "rot": 221.3,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3009.7,
+   "z": -1576.1,
+   "type": "oak",
+   "scale": 1.55,
+   "rot": 146.3,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3611.7,
+   "z": -1571.6,
+   "type": "detailed",
+   "scale": 1.32,
+   "rot": 265.5,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3224.5,
+   "z": -2745.1,
+   "type": "pine",
+   "scale": 1.1,
+   "rot": 230.9,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3120.1,
+   "z": -1593.7,
+   "type": "oak",
+   "scale": 1.54,
+   "rot": 77.4,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3383.2,
+   "z": -1581.9,
+   "type": "oak",
+   "scale": 1.12,
+   "rot": 69.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3522.1,
+   "z": -1578.2,
+   "type": "oak",
+   "scale": 1.3,
+   "rot": 79.4,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3736.5,
+   "z": -1605.6,
+   "type": "oak",
+   "scale": 1.21,
+   "rot": 202.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3652.8,
+   "z": -1663.8,
+   "type": "pine",
+   "scale": 1.45,
+   "rot": 296.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3025.1,
+   "z": -1641.5,
+   "type": "oak",
+   "scale": 1.54,
+   "rot": 209.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3537.0,
+   "z": -1589.1,
+   "type": "oak",
+   "scale": 0.8,
+   "rot": 75.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3006.7,
+   "z": -2793.0,
+   "type": "detailed",
+   "scale": 1.45,
+   "rot": 218.1,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3255.8,
+   "z": -1648.9,
+   "type": "detailed",
+   "scale": 1.31,
+   "rot": 336.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3090.9,
+   "z": -2703.4,
+   "type": "pine",
+   "scale": 0.88,
+   "rot": 34.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3079.1,
+   "z": -1716.6,
+   "type": "detailed",
+   "scale": 1.02,
+   "rot": 293.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3706.2,
+   "z": -1684.7,
+   "type": "pine",
+   "scale": 1.58,
+   "rot": 189.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3028.4,
+   "z": -1682.3,
+   "type": "oak",
+   "scale": 1.08,
+   "rot": 129.2,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3603.0,
+   "z": -1612.9,
+   "type": "pine",
+   "scale": 1.22,
+   "rot": 118.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3468.4,
+   "z": -1600.2,
+   "type": "oak",
+   "scale": 1.01,
+   "rot": 195.5,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3633.9,
+   "z": -1663.3,
+   "type": "oak",
+   "scale": 1.34,
+   "rot": 176.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3764.2,
+   "z": -1656.8,
+   "type": "pine",
+   "scale": 1.18,
+   "rot": 255.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3280.3,
+   "z": -1567.5,
+   "type": "oak",
+   "scale": 1.5,
+   "rot": 237.5,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3211.1,
+   "z": -1693.3,
+   "type": "pine",
+   "scale": 1.32,
+   "rot": 282.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3584.4,
+   "z": -1671.8,
+   "type": "detailed",
+   "scale": 0.87,
+   "rot": 167.2,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3492.0,
+   "z": -1610.6,
+   "type": "detailed",
+   "scale": 1.07,
+   "rot": 301.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3711.2,
+   "z": -1588.3,
+   "type": "oak",
+   "scale": 0.99,
+   "rot": 87.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3054.0,
+   "z": -2780.8,
+   "type": "pine",
+   "scale": 1.05,
+   "rot": 231.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3059.2,
+   "z": -1702.7,
+   "type": "oak",
+   "scale": 1.56,
+   "rot": 51.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3661.2,
+   "z": -1636.1,
+   "type": "oak",
+   "scale": 1.21,
+   "rot": 3.4,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3690.1,
+   "z": -1578.0,
+   "type": "detailed",
+   "scale": 0.93,
+   "rot": 190.2,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3643.4,
+   "z": -1695.9,
+   "type": "detailed",
+   "scale": 1.16,
+   "rot": 329.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3174.4,
+   "z": -2729.7,
+   "type": "pine",
+   "scale": 0.85,
+   "rot": 226.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3605.4,
+   "z": -1585.1,
+   "type": "detailed",
+   "scale": 0.89,
+   "rot": 172.2,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3315.8,
+   "z": -1633.7,
+   "type": "oak",
+   "scale": 1.01,
+   "rot": 284.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3257.1,
+   "z": -2796.5,
+   "type": "pine",
+   "scale": 1.12,
+   "rot": 221.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3373.5,
+   "z": -1567.3,
+   "type": "oak",
+   "scale": 0.98,
+   "rot": 210.9,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3375.0,
+   "z": -1594.6,
+   "type": "oak",
+   "scale": 1.26,
+   "rot": 309.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3338.3,
+   "z": -1638.6,
+   "type": "oak",
+   "scale": 1.54,
+   "rot": 95.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3093.7,
+   "z": -1687.0,
+   "type": "oak",
+   "scale": 0.9,
+   "rot": 263.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3135.4,
+   "z": -1565.4,
+   "type": "oak",
+   "scale": 0.83,
+   "rot": 171.5,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3354.1,
+   "z": -1595.0,
+   "type": "detailed",
+   "scale": 1.04,
+   "rot": 32.2,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3083.5,
+   "z": -1591.1,
+   "type": "detailed",
+   "scale": 1.06,
+   "rot": 116.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3020.9,
+   "z": -1587.7,
+   "type": "pine",
+   "scale": 1.35,
+   "rot": 51.1,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3790.4,
+   "z": -1564.9,
+   "type": "detailed",
+   "scale": 1.14,
+   "rot": 119.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3374.0,
+   "z": -1679.6,
+   "type": "oak",
+   "scale": 1.15,
+   "rot": 42.6,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3729.7,
+   "z": -1589.3,
+   "type": "oak",
+   "scale": 1.07,
+   "rot": 255.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3211.9,
+   "z": -1668.3,
+   "type": "detailed",
+   "scale": 1.26,
+   "rot": 54.8,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3184.3,
+   "z": -2755.9,
+   "type": "detailed",
+   "scale": 1.14,
+   "rot": 230.2,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3399.8,
+   "z": -1621.9,
+   "type": "pine",
+   "scale": 1.55,
+   "rot": 319.2,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3466.6,
+   "z": -1616.4,
+   "type": "oak",
+   "scale": 1.28,
+   "rot": 330.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3041.0,
+   "z": -1602.9,
+   "type": "detailed",
+   "scale": 1.55,
+   "rot": 132.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3128.3,
+   "z": -2763.4,
+   "type": "oak",
+   "scale": 1.32,
+   "rot": 216.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3019.7,
+   "z": -2776.4,
+   "type": "detailed",
+   "scale": 1.23,
+   "rot": 215.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3282.7,
+   "z": -1587.9,
+   "type": "oak",
+   "scale": 1.46,
+   "rot": 6.9,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3463.9,
+   "z": -1625.8,
+   "type": "oak",
+   "scale": 0.82,
+   "rot": 85.7,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3393.3,
+   "z": -1577.7,
+   "type": "oak",
+   "scale": 1.45,
+   "rot": 170.9,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3278.7,
+   "z": -2700.7,
+   "type": "oak",
+   "scale": 1.36,
+   "rot": 306.5,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": 3614.0,
+   "z": -1580.3,
+   "type": "pine",
+   "scale": 1.24,
+   "rot": 273.0,
+   "zone": "SE_Foothill_Forest"
+  },
+  {
+   "x": -921.0,
+   "z": -3503.4,
+   "type": "oak",
+   "scale": 1.25,
+   "rot": 187.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -505.6,
+   "z": -3357.6,
+   "type": "oak",
+   "scale": 1.27,
+   "rot": 318.4,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -68.8,
+   "z": -3624.9,
+   "type": "pine",
+   "scale": 1.36,
+   "rot": 233.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -282.1,
+   "z": -3605.1,
+   "type": "oak",
+   "scale": 1.03,
+   "rot": 64.5,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -635.9,
+   "z": -3395.0,
+   "type": "oak",
+   "scale": 1.04,
+   "rot": 149.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -707.6,
+   "z": -3751.5,
+   "type": "oak",
+   "scale": 1.17,
+   "rot": 306.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -864.3,
+   "z": -3558.7,
+   "type": "pine",
+   "scale": 1.23,
+   "rot": 314.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -793.9,
+   "z": -3593.6,
+   "type": "oak",
+   "scale": 0.87,
+   "rot": 104.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -464.8,
+   "z": -3783.3,
+   "type": "pine",
+   "scale": 1.48,
+   "rot": 267.5,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 672.7,
+   "z": -3531.3,
+   "type": "oak",
+   "scale": 1.59,
+   "rot": 37.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -867.8,
+   "z": -3693.1,
+   "type": "oak",
+   "scale": 1.08,
+   "rot": 161.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -75.6,
+   "z": -3707.8,
+   "type": "pine",
+   "scale": 1.07,
+   "rot": 189.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -664.0,
+   "z": -3625.9,
+   "type": "pine",
+   "scale": 1.34,
+   "rot": 91.1,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 790.1,
+   "z": -3431.2,
+   "type": "oak",
+   "scale": 0.99,
+   "rot": 183.1,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 919.9,
+   "z": -3368.4,
+   "type": "pine",
+   "scale": 1.35,
+   "rot": 135.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -61.5,
+   "z": -3790.9,
+   "type": "pine",
+   "scale": 1.21,
+   "rot": 313.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -470.1,
+   "z": -3604.0,
+   "type": "oak",
+   "scale": 1.57,
+   "rot": 282.4,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 851.2,
+   "z": -3479.7,
+   "type": "pine",
+   "scale": 0.84,
+   "rot": 311.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -990.3,
+   "z": -3372.7,
+   "type": "oak",
+   "scale": 1.18,
+   "rot": 280.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -938.9,
+   "z": -3758.2,
+   "type": "pine",
+   "scale": 1.36,
+   "rot": 226.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -371.2,
+   "z": -3651.5,
+   "type": "pine",
+   "scale": 1.27,
+   "rot": 46.4,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 28.5,
+   "z": -3759.1,
+   "type": "oak",
+   "scale": 1.38,
+   "rot": 302.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -934.7,
+   "z": -3767.3,
+   "type": "pine",
+   "scale": 1.12,
+   "rot": 227.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -539.6,
+   "z": -3485.8,
+   "type": "pine",
+   "scale": 1.03,
+   "rot": 20.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -415.5,
+   "z": -3686.4,
+   "type": "pine",
+   "scale": 0.89,
+   "rot": 14.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 919.3,
+   "z": -3559.4,
+   "type": "oak",
+   "scale": 1.09,
+   "rot": 342.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 991.9,
+   "z": -3446.3,
+   "type": "pine",
+   "scale": 1.57,
+   "rot": 350.1,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 912.8,
+   "z": -3574.7,
+   "type": "oak",
+   "scale": 0.81,
+   "rot": 138.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 901.8,
+   "z": -3370.1,
+   "type": "oak",
+   "scale": 1.43,
+   "rot": 42.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -81.8,
+   "z": -3743.8,
+   "type": "pine",
+   "scale": 1.08,
+   "rot": 127.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -381.8,
+   "z": -3647.9,
+   "type": "oak",
+   "scale": 1.02,
+   "rot": 232.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -955.1,
+   "z": -3776.5,
+   "type": "pine",
+   "scale": 1.38,
+   "rot": 341.5,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -604.7,
+   "z": -3647.4,
+   "type": "oak",
+   "scale": 0.81,
+   "rot": 208.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 718.4,
+   "z": -3353.5,
+   "type": "oak",
+   "scale": 0.84,
+   "rot": 127.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -589.1,
+   "z": -3354.7,
+   "type": "oak",
+   "scale": 1.26,
+   "rot": 323.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -435.9,
+   "z": -3616.4,
+   "type": "pine",
+   "scale": 1.14,
+   "rot": 154.1,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -582.0,
+   "z": -3571.2,
+   "type": "oak",
+   "scale": 1.02,
+   "rot": 170.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -213.5,
+   "z": -3627.0,
+   "type": "oak",
+   "scale": 1.02,
+   "rot": 350.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -38.1,
+   "z": -3775.3,
+   "type": "pine",
+   "scale": 1.59,
+   "rot": 342.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 704.6,
+   "z": -3547.7,
+   "type": "pine",
+   "scale": 1.09,
+   "rot": 274.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -828.6,
+   "z": -3426.2,
+   "type": "oak",
+   "scale": 1.19,
+   "rot": 136.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -652.3,
+   "z": -3363.4,
+   "type": "pine",
+   "scale": 0.85,
+   "rot": 175.4,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -584.3,
+   "z": -3739.8,
+   "type": "pine",
+   "scale": 1.47,
+   "rot": 226.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -667.9,
+   "z": -3359.4,
+   "type": "oak",
+   "scale": 1.34,
+   "rot": 7.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 956.9,
+   "z": -3492.8,
+   "type": "pine",
+   "scale": 0.87,
+   "rot": 241.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 907.2,
+   "z": -3394.8,
+   "type": "oak",
+   "scale": 1.47,
+   "rot": 329.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -226.7,
+   "z": -3662.3,
+   "type": "oak",
+   "scale": 1.1,
+   "rot": 149.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -856.2,
+   "z": -3709.8,
+   "type": "pine",
+   "scale": 1.34,
+   "rot": 355.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -138.2,
+   "z": -3753.0,
+   "type": "pine",
+   "scale": 1.24,
+   "rot": 308.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -639.0,
+   "z": -3587.0,
+   "type": "oak",
+   "scale": 1.41,
+   "rot": 47.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -313.4,
+   "z": -3589.9,
+   "type": "oak",
+   "scale": 1.44,
+   "rot": 121.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -899.7,
+   "z": -3620.2,
+   "type": "oak",
+   "scale": 1.57,
+   "rot": 315.4,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -108.2,
+   "z": -3591.2,
+   "type": "pine",
+   "scale": 1.09,
+   "rot": 190.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -288.4,
+   "z": -3720.1,
+   "type": "oak",
+   "scale": 1.46,
+   "rot": 288.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -477.2,
+   "z": -3494.2,
+   "type": "pine",
+   "scale": 1.14,
+   "rot": 295.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -657.8,
+   "z": -3372.4,
+   "type": "pine",
+   "scale": 0.98,
+   "rot": 220.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -308.5,
+   "z": -3616.1,
+   "type": "pine",
+   "scale": 0.98,
+   "rot": 190.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -732.5,
+   "z": -3759.7,
+   "type": "pine",
+   "scale": 1.03,
+   "rot": 174.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -415.2,
+   "z": -3764.0,
+   "type": "oak",
+   "scale": 1.45,
+   "rot": 239.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -816.7,
+   "z": -3585.5,
+   "type": "oak",
+   "scale": 1.12,
+   "rot": 316.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -548.2,
+   "z": -3377.1,
+   "type": "pine",
+   "scale": 0.86,
+   "rot": 138.4,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -758.5,
+   "z": -3684.9,
+   "type": "pine",
+   "scale": 1.45,
+   "rot": 163.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -564.5,
+   "z": -3694.9,
+   "type": "pine",
+   "scale": 0.84,
+   "rot": 200.1,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -872.3,
+   "z": -3606.5,
+   "type": "pine",
+   "scale": 1.1,
+   "rot": 281.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -354.1,
+   "z": -3733.6,
+   "type": "pine",
+   "scale": 0.97,
+   "rot": 164.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -260.9,
+   "z": -3743.8,
+   "type": "pine",
+   "scale": 0.81,
+   "rot": 116.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -742.1,
+   "z": -3586.9,
+   "type": "pine",
+   "scale": 0.87,
+   "rot": 26.4,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -35.9,
+   "z": -3721.3,
+   "type": "pine",
+   "scale": 1.24,
+   "rot": 302.3,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -969.0,
+   "z": -3548.9,
+   "type": "pine",
+   "scale": 1.19,
+   "rot": 352.5,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -884.3,
+   "z": -3597.9,
+   "type": "oak",
+   "scale": 1.24,
+   "rot": 194.5,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 952.3,
+   "z": -3453.4,
+   "type": "pine",
+   "scale": 0.97,
+   "rot": 106.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -535.9,
+   "z": -3384.8,
+   "type": "oak",
+   "scale": 1.5,
+   "rot": 72.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -284.4,
+   "z": -3668.0,
+   "type": "oak",
+   "scale": 0.87,
+   "rot": 210.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 785.3,
+   "z": -3460.2,
+   "type": "pine",
+   "scale": 1.14,
+   "rot": 132.9,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 763.9,
+   "z": -3546.3,
+   "type": "oak",
+   "scale": 1.09,
+   "rot": 281.8,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -389.7,
+   "z": -3694.8,
+   "type": "oak",
+   "scale": 0.85,
+   "rot": 25.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 997.4,
+   "z": -3552.7,
+   "type": "oak",
+   "scale": 1.08,
+   "rot": 175.0,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 902.7,
+   "z": -3457.3,
+   "type": "oak",
+   "scale": 1.32,
+   "rot": 134.7,
+   "zone": "South_Forest"
+  },
+  {
+   "x": 725.0,
+   "z": -3361.2,
+   "type": "oak",
+   "scale": 1.27,
+   "rot": 64.6,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -83.0,
+   "z": -3582.9,
+   "type": "oak",
+   "scale": 1.3,
+   "rot": 210.2,
+   "zone": "South_Forest"
+  },
+  {
+   "x": -2710.7,
+   "z": 913.7,
+   "type": "oak",
+   "scale": 1.22,
+   "rot": 344.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1660.4,
+   "z": 1465.5,
+   "type": "oak",
+   "scale": 1.09,
+   "rot": 299.2,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1183.9,
+   "z": 1387.2,
+   "type": "oak",
+   "scale": 1.08,
+   "rot": 172.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1319.4,
+   "z": 2456.3,
+   "type": "detailed",
+   "scale": 1.36,
+   "rot": 301.4,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1734.7,
+   "z": 1077.6,
+   "type": "detailed",
+   "scale": 1.04,
+   "rot": 332.7,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1694.2,
+   "z": 2337.1,
+   "type": "detailed",
+   "scale": 1.6,
+   "rot": 318.0,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1641.2,
+   "z": 937.8,
+   "type": "oak",
+   "scale": 1.58,
+   "rot": 308.2,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1504.0,
+   "z": 1510.4,
+   "type": "oak",
+   "scale": 1.5,
+   "rot": 188.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1301.0,
+   "z": 2127.5,
+   "type": "oak",
+   "scale": 0.89,
+   "rot": 277.9,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1539.4,
+   "z": 1602.2,
+   "type": "detailed",
+   "scale": 1.18,
+   "rot": 188.2,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1224.0,
+   "z": 1795.6,
+   "type": "oak",
+   "scale": 0.92,
+   "rot": 36.3,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1589.0,
+   "z": 1314.5,
+   "type": "detailed",
+   "scale": 1.13,
+   "rot": 229.9,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1531.2,
+   "z": 1645.5,
+   "type": "detailed",
+   "scale": 1.21,
+   "rot": 357.7,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1555.0,
+   "z": 2336.8,
+   "type": "detailed",
+   "scale": 1.13,
+   "rot": 279.6,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1296.9,
+   "z": 1112.2,
+   "type": "detailed",
+   "scale": 0.88,
+   "rot": 165.3,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1550.3,
+   "z": 2458.6,
+   "type": "detailed",
+   "scale": 0.91,
+   "rot": 189.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1239.8,
+   "z": 2323.8,
+   "type": "oak",
+   "scale": 0.82,
+   "rot": 310.6,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1225.9,
+   "z": 1882.4,
+   "type": "detailed",
+   "scale": 1.02,
+   "rot": 291.7,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1457.8,
+   "z": 2563.8,
+   "type": "detailed",
+   "scale": 1.43,
+   "rot": 224.2,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1465.8,
+   "z": 1090.2,
+   "type": "oak",
+   "scale": 1.2,
+   "rot": 273.4,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1592.2,
+   "z": 1070.4,
+   "type": "oak",
+   "scale": 0.94,
+   "rot": 90.2,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1548.9,
+   "z": 2232.1,
+   "type": "detailed",
+   "scale": 1.4,
+   "rot": 169.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1536.8,
+   "z": 1031.9,
+   "type": "oak",
+   "scale": 0.84,
+   "rot": 141.0,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1342.6,
+   "z": 2376.5,
+   "type": "detailed",
+   "scale": 0.94,
+   "rot": 116.3,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1325.9,
+   "z": 1705.1,
+   "type": "oak",
+   "scale": 1.58,
+   "rot": 136.1,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1447.7,
+   "z": 2378.2,
+   "type": "oak",
+   "scale": 1.17,
+   "rot": 331.5,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1401.3,
+   "z": 2575.4,
+   "type": "oak",
+   "scale": 1.52,
+   "rot": 307.4,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1498.8,
+   "z": 2183.5,
+   "type": "detailed",
+   "scale": 1.47,
+   "rot": 349.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1304.2,
+   "z": 2197.1,
+   "type": "detailed",
+   "scale": 1.53,
+   "rot": 245.0,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1248.6,
+   "z": 991.1,
+   "type": "detailed",
+   "scale": 1.25,
+   "rot": 203.7,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1624.3,
+   "z": 1090.1,
+   "type": "oak",
+   "scale": 1.5,
+   "rot": 16.1,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1200.2,
+   "z": 1369.8,
+   "type": "detailed",
+   "scale": 1.12,
+   "rot": 184.7,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1176.4,
+   "z": 1668.5,
+   "type": "detailed",
+   "scale": 1.55,
+   "rot": 8.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1426.9,
+   "z": 1435.4,
+   "type": "detailed",
+   "scale": 1.32,
+   "rot": 229.6,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1553.9,
+   "z": 1457.3,
+   "type": "detailed",
+   "scale": 1.12,
+   "rot": 148.4,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1295.8,
+   "z": 2533.7,
+   "type": "oak",
+   "scale": 1.46,
+   "rot": 140.3,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1418.5,
+   "z": 2368.9,
+   "type": "detailed",
+   "scale": 1.0,
+   "rot": 271.9,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1131.2,
+   "z": 1287.7,
+   "type": "oak",
+   "scale": 0.96,
+   "rot": 283.0,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1157.3,
+   "z": 1789.0,
+   "type": "detailed",
+   "scale": 0.94,
+   "rot": 216.7,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1261.7,
+   "z": 2062.1,
+   "type": "oak",
+   "scale": 1.08,
+   "rot": 11.4,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1259.0,
+   "z": 2590.1,
+   "type": "detailed",
+   "scale": 1.6,
+   "rot": 112.5,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1200.5,
+   "z": 1644.8,
+   "type": "detailed",
+   "scale": 0.93,
+   "rot": 96.6,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1673.7,
+   "z": 1106.5,
+   "type": "oak",
+   "scale": 1.19,
+   "rot": 324.1,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1120.2,
+   "z": 1907.3,
+   "type": "detailed",
+   "scale": 1.25,
+   "rot": 179.0,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1304.8,
+   "z": 1670.8,
+   "type": "oak",
+   "scale": 0.93,
+   "rot": 116.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1390.7,
+   "z": 966.6,
+   "type": "oak",
+   "scale": 1.17,
+   "rot": 205.7,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1447.7,
+   "z": 2079.0,
+   "type": "oak",
+   "scale": 1.47,
+   "rot": 199.2,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1352.5,
+   "z": 1782.8,
+   "type": "detailed",
+   "scale": 0.97,
+   "rot": 70.2,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1444.0,
+   "z": 1204.3,
+   "type": "detailed",
+   "scale": 1.2,
+   "rot": 227.5,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -1549.0,
+   "z": 2430.6,
+   "type": "oak",
+   "scale": 0.96,
+   "rot": 71.8,
+   "zone": "Ueno_Park_Green"
+  },
+  {
+   "x": -3205.6,
+   "z": 3742.7,
+   "type": "pine",
+   "scale": 1.13,
+   "rot": 63.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3146.1,
+   "z": 3791.0,
+   "type": "pine",
+   "scale": 1.06,
+   "rot": 332.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3390.1,
+   "z": 3741.9,
+   "type": "pine",
+   "scale": 1.53,
+   "rot": 206.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3682.5,
+   "z": 3788.6,
+   "type": "pine",
+   "scale": 1.17,
+   "rot": 313.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3517.0,
+   "z": 3766.9,
+   "type": "pine",
+   "scale": 1.55,
+   "rot": 154.4,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2993.7,
+   "z": 3739.3,
+   "type": "pine",
+   "scale": 0.87,
+   "rot": 224.3,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3609.4,
+   "z": 3751.3,
+   "type": "pine",
+   "scale": 1.46,
+   "rot": 43.4,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3531.0,
+   "z": 3762.2,
+   "type": "pine",
+   "scale": 1.23,
+   "rot": 177.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3156.1,
+   "z": 3798.7,
+   "type": "pine",
+   "scale": 1.09,
+   "rot": 207.7,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3528.5,
+   "z": 3739.8,
+   "type": "pine",
+   "scale": 1.4,
+   "rot": 244.4,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3035.2,
+   "z": 3794.3,
+   "type": "pine",
+   "scale": 0.8,
+   "rot": 273.1,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3669.8,
+   "z": 3768.5,
+   "type": "pine",
+   "scale": 1.57,
+   "rot": 262.1,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2958.6,
+   "z": 3746.6,
+   "type": "pine",
+   "scale": 1.35,
+   "rot": 169.8,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3135.1,
+   "z": 3771.5,
+   "type": "pine",
+   "scale": 1.35,
+   "rot": 145.9,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3462.5,
+   "z": 3764.9,
+   "type": "pine",
+   "scale": 1.16,
+   "rot": 314.3,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3403.2,
+   "z": 3747.9,
+   "type": "pine",
+   "scale": 1.21,
+   "rot": 80.1,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3711.6,
+   "z": 3784.5,
+   "type": "pine",
+   "scale": 1.34,
+   "rot": 318.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3282.7,
+   "z": 3741.6,
+   "type": "pine",
+   "scale": 1.35,
+   "rot": 196.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3005.9,
+   "z": 3748.0,
+   "type": "pine",
+   "scale": 0.95,
+   "rot": 249.8,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3388.9,
+   "z": 3770.4,
+   "type": "pine",
+   "scale": 0.94,
+   "rot": 221.5,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3411.3,
+   "z": 3760.1,
+   "type": "pine",
+   "scale": 0.98,
+   "rot": 242.9,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3702.2,
+   "z": 3799.4,
+   "type": "pine",
+   "scale": 0.97,
+   "rot": 220.4,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3112.1,
+   "z": 3766.1,
+   "type": "pine",
+   "scale": 1.25,
+   "rot": 253.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3050.4,
+   "z": 3755.0,
+   "type": "pine",
+   "scale": 1.18,
+   "rot": 219.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3548.5,
+   "z": 3778.7,
+   "type": "pine",
+   "scale": 1.26,
+   "rot": 255.7,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3265.9,
+   "z": 3758.3,
+   "type": "pine",
+   "scale": 0.91,
+   "rot": 289.1,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3370.6,
+   "z": 3736.0,
+   "type": "pine",
+   "scale": 1.08,
+   "rot": 264.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3119.7,
+   "z": 3797.0,
+   "type": "pine",
+   "scale": 1.17,
+   "rot": 250.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3766.2,
+   "z": 3780.6,
+   "type": "pine",
+   "scale": 1.16,
+   "rot": 99.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3123.4,
+   "z": 3776.2,
+   "type": "pine",
+   "scale": 1.27,
+   "rot": 84.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2945.0,
+   "z": 3789.8,
+   "type": "pine",
+   "scale": 1.07,
+   "rot": 313.3,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2984.0,
+   "z": 3790.9,
+   "type": "pine",
+   "scale": 1.08,
+   "rot": 118.7,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2999.1,
+   "z": 3763.5,
+   "type": "pine",
+   "scale": 1.4,
+   "rot": 215.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3461.3,
+   "z": 3787.8,
+   "type": "pine",
+   "scale": 1.52,
+   "rot": 301.7,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3314.1,
+   "z": 3788.9,
+   "type": "pine",
+   "scale": 0.95,
+   "rot": 210.3,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3220.0,
+   "z": 3769.5,
+   "type": "pine",
+   "scale": 1.14,
+   "rot": 190.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3455.7,
+   "z": 3773.1,
+   "type": "pine",
+   "scale": 1.03,
+   "rot": 96.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3608.2,
+   "z": 3796.0,
+   "type": "pine",
+   "scale": 1.1,
+   "rot": 188.4,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3318.6,
+   "z": 3771.8,
+   "type": "pine",
+   "scale": 0.97,
+   "rot": 318.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3551.6,
+   "z": 3793.3,
+   "type": "pine",
+   "scale": 1.2,
+   "rot": 108.5,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3695.5,
+   "z": 3793.3,
+   "type": "pine",
+   "scale": 0.87,
+   "rot": 72.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3070.8,
+   "z": 3797.9,
+   "type": "pine",
+   "scale": 0.88,
+   "rot": 83.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3339.5,
+   "z": 3773.5,
+   "type": "pine",
+   "scale": 1.43,
+   "rot": 55.5,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3507.2,
+   "z": 3775.7,
+   "type": "pine",
+   "scale": 1.11,
+   "rot": 80.6,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2982.6,
+   "z": 3754.0,
+   "type": "pine",
+   "scale": 1.51,
+   "rot": 337.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3014.0,
+   "z": 3747.1,
+   "type": "pine",
+   "scale": 1.36,
+   "rot": 30.9,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3226.1,
+   "z": 3763.3,
+   "type": "pine",
+   "scale": 0.85,
+   "rot": 292.6,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3629.8,
+   "z": 3761.6,
+   "type": "pine",
+   "scale": 1.45,
+   "rot": 181.3,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2976.7,
+   "z": 3744.3,
+   "type": "pine",
+   "scale": 1.42,
+   "rot": 351.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3558.4,
+   "z": 3799.2,
+   "type": "pine",
+   "scale": 1.26,
+   "rot": 124.0,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3140.1,
+   "z": 3737.3,
+   "type": "pine",
+   "scale": 1.59,
+   "rot": 140.6,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3687.5,
+   "z": 3762.7,
+   "type": "pine",
+   "scale": 1.39,
+   "rot": 16.1,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3072.5,
+   "z": 3747.3,
+   "type": "pine",
+   "scale": 1.01,
+   "rot": 103.7,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3205.1,
+   "z": 3760.2,
+   "type": "pine",
+   "scale": 1.14,
+   "rot": 146.5,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3173.1,
+   "z": 3748.9,
+   "type": "pine",
+   "scale": 0.82,
+   "rot": 205.7,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3695.7,
+   "z": 3738.4,
+   "type": "pine",
+   "scale": 1.13,
+   "rot": 328.6,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3583.7,
+   "z": 3747.0,
+   "type": "pine",
+   "scale": 1.19,
+   "rot": 160.5,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -2964.9,
+   "z": 3738.6,
+   "type": "pine",
+   "scale": 1.48,
+   "rot": 359.2,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3634.4,
+   "z": 3768.6,
+   "type": "pine",
+   "scale": 1.15,
+   "rot": 188.3,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -3267.8,
+   "z": 3736.0,
+   "type": "pine",
+   "scale": 1.24,
+   "rot": 4.5,
+   "zone": "NW_Mountain_Pines"
+  },
+  {
+   "x": -1153.0,
+   "z": 1715.3,
+   "type": "sakura",
+   "scale": 1.17,
+   "rot": 111.6,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1745.0,
+   "z": 1197.7,
+   "type": "sakura",
+   "scale": 1.09,
+   "rot": 200.7,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1198.6,
+   "z": 1774.5,
+   "type": "sakura",
+   "scale": 1.31,
+   "rot": 18.1,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1552.7,
+   "z": 1847.3,
+   "type": "sakura",
+   "scale": 0.92,
+   "rot": 351.6,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1674.2,
+   "z": 1169.1,
+   "type": "sakura",
+   "scale": 0.93,
+   "rot": 171.8,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1601.0,
+   "z": 1494.9,
+   "type": "sakura",
+   "scale": 1.09,
+   "rot": 227.4,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1212.2,
+   "z": 1849.3,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 253.5,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1140.5,
+   "z": 1905.0,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 257.4,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1405.5,
+   "z": 2194.6,
+   "type": "sakura",
+   "scale": 0.92,
+   "rot": 61.8,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1530.9,
+   "z": 2435.9,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 320.3,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1413.4,
+   "z": 2556.6,
+   "type": "sakura",
+   "scale": 1.11,
+   "rot": 304.5,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1222.9,
+   "z": 1777.0,
+   "type": "sakura",
+   "scale": 1.38,
+   "rot": 251.4,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1293.8,
+   "z": 1705.8,
+   "type": "sakura",
+   "scale": 0.92,
+   "rot": 267.2,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1129.7,
+   "z": 2039.6,
+   "type": "sakura",
+   "scale": 1.21,
+   "rot": 284.3,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1504.7,
+   "z": 1011.3,
+   "type": "sakura",
+   "scale": 1.31,
+   "rot": 204.9,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1343.9,
+   "z": 912.2,
+   "type": "sakura",
+   "scale": 1.24,
+   "rot": 251.8,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1433.3,
+   "z": 1576.6,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 229.2,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1341.7,
+   "z": 1941.3,
+   "type": "sakura",
+   "scale": 1.3,
+   "rot": 296.4,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1298.9,
+   "z": 2572.5,
+   "type": "sakura",
+   "scale": 1.11,
+   "rot": 270.4,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1134.2,
+   "z": 1511.2,
+   "type": "sakura",
+   "scale": 1.11,
+   "rot": 39.2,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1618.5,
+   "z": 2459.5,
+   "type": "sakura",
+   "scale": 1.03,
+   "rot": 316.5,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1386.1,
+   "z": 1539.2,
+   "type": "sakura",
+   "scale": 1.23,
+   "rot": 133.7,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1623.3,
+   "z": 1119.0,
+   "type": "sakura",
+   "scale": 0.91,
+   "rot": 104.8,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1190.8,
+   "z": 2471.3,
+   "type": "sakura",
+   "scale": 1.2,
+   "rot": 2.6,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1283.9,
+   "z": 2087.2,
+   "type": "sakura",
+   "scale": 1.08,
+   "rot": 52.1,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1437.2,
+   "z": 1137.2,
+   "type": "sakura",
+   "scale": 0.91,
+   "rot": 116.7,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1405.7,
+   "z": 2026.0,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 154.7,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1609.8,
+   "z": 1276.0,
+   "type": "sakura",
+   "scale": 1.33,
+   "rot": 217.9,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1218.3,
+   "z": 1195.9,
+   "type": "sakura",
+   "scale": 1.29,
+   "rot": 112.5,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1467.5,
+   "z": 1553.2,
+   "type": "sakura",
+   "scale": 1.39,
+   "rot": 33.2,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1696.4,
+   "z": 1203.1,
+   "type": "sakura",
+   "scale": 0.9,
+   "rot": 82.2,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1375.7,
+   "z": 2248.0,
+   "type": "sakura",
+   "scale": 1.07,
+   "rot": 61.9,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1551.1,
+   "z": 966.2,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 350.3,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1479.3,
+   "z": 2075.8,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 5.6,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1595.0,
+   "z": 1009.7,
+   "type": "sakura",
+   "scale": 1.02,
+   "rot": 51.8,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1381.3,
+   "z": 1492.5,
+   "type": "sakura",
+   "scale": 1.21,
+   "rot": 57.0,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1578.8,
+   "z": 1103.6,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 176.4,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1944.9,
+   "z": 908.6,
+   "type": "sakura",
+   "scale": 1.17,
+   "rot": 30.2,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1360.5,
+   "z": 1793.5,
+   "type": "sakura",
+   "scale": 1.27,
+   "rot": 232.1,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": -1320.9,
+   "z": 1414.3,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 96.7,
+   "zone": "Ueno_Park_Sakura"
+  },
+  {
+   "x": 1470.6,
+   "z": -796.3,
+   "type": "sakura",
+   "scale": 0.9,
+   "rot": 173.8,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1474.2,
+   "z": -681.2,
+   "type": "sakura",
+   "scale": 1.01,
+   "rot": 169.0,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1473.8,
+   "z": -567.4,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 251.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1474.9,
+   "z": -451.5,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 341.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1473.1,
+   "z": -337.7,
+   "type": "sakura",
+   "scale": 0.91,
+   "rot": 344.1,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1474.3,
+   "z": -225.3,
+   "type": "sakura",
+   "scale": 1.1,
+   "rot": 256.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1472.8,
+   "z": -114.9,
+   "type": "sakura",
+   "scale": 0.9,
+   "rot": 207.3,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1472.0,
+   "z": 112.8,
+   "type": "sakura",
+   "scale": 1.18,
+   "rot": 73.9,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1472.1,
+   "z": 224.4,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 66.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1473.4,
+   "z": 342.2,
+   "type": "sakura",
+   "scale": 1.28,
+   "rot": 277.8,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1473.0,
+   "z": 456.0,
+   "type": "sakura",
+   "scale": 1.28,
+   "rot": 208.3,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1472.3,
+   "z": 565.2,
+   "type": "sakura",
+   "scale": 1.06,
+   "rot": 275.7,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1472.3,
+   "z": 679.3,
+   "type": "sakura",
+   "scale": 1.29,
+   "rot": 172.9,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1472.2,
+   "z": 792.4,
+   "type": "sakura",
+   "scale": 1.24,
+   "rot": 68.5,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1527.0,
+   "z": -791.5,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 164.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1529.8,
+   "z": -677.2,
+   "type": "sakura",
+   "scale": 1.16,
+   "rot": 255.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1530.4,
+   "z": -564.8,
+   "type": "sakura",
+   "scale": 1.0,
+   "rot": 315.9,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1530.4,
+   "z": -451.4,
+   "type": "sakura",
+   "scale": 1.14,
+   "rot": 270.9,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1527.5,
+   "z": -341.6,
+   "type": "sakura",
+   "scale": 1.19,
+   "rot": 91.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1528.1,
+   "z": -228.2,
+   "type": "sakura",
+   "scale": 0.94,
+   "rot": 333.3,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1528.5,
+   "z": -114.5,
+   "type": "sakura",
+   "scale": 0.99,
+   "rot": 237.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1526.7,
+   "z": 115.1,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 315.0,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1530.0,
+   "z": 225.8,
+   "type": "sakura",
+   "scale": 0.93,
+   "rot": 67.3,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1529.5,
+   "z": 338.0,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 356.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1529.9,
+   "z": 455.6,
+   "type": "sakura",
+   "scale": 0.96,
+   "rot": 50.7,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1529.9,
+   "z": 564.0,
+   "type": "sakura",
+   "scale": 1.13,
+   "rot": 47.1,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1525.4,
+   "z": 680.5,
+   "type": "sakura",
+   "scale": 1.2,
+   "rot": 293.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1525.6,
+   "z": 790.4,
+   "type": "sakura",
+   "scale": 0.93,
+   "rot": 324.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1166.7,
+   "z": -28.8,
+   "type": "sakura",
+   "scale": 1.2,
+   "rot": 115.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1201.8,
+   "z": -26.0,
+   "type": "sakura",
+   "scale": 1.07,
+   "rot": 352.9,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1234.2,
+   "z": -31.0,
+   "type": "sakura",
+   "scale": 0.91,
+   "rot": 121.2,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1269.7,
+   "z": -26.6,
+   "type": "sakura",
+   "scale": 0.93,
+   "rot": 71.7,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1297.1,
+   "z": -26.8,
+   "type": "sakura",
+   "scale": 1.08,
+   "rot": 122.2,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1332.9,
+   "z": -27.3,
+   "type": "sakura",
+   "scale": 0.94,
+   "rot": 10.5,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1364.2,
+   "z": -30.4,
+   "type": "sakura",
+   "scale": 0.96,
+   "rot": 124.2,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1402.1,
+   "z": -28.4,
+   "type": "sakura",
+   "scale": 1.05,
+   "rot": 165.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1431.7,
+   "z": -27.1,
+   "type": "sakura",
+   "scale": 0.93,
+   "rot": 145.8,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1465.9,
+   "z": -29.0,
+   "type": "sakura",
+   "scale": 1.0,
+   "rot": 160.1,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1531.9,
+   "z": -28.4,
+   "type": "sakura",
+   "scale": 1.19,
+   "rot": 225.0,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1566.3,
+   "z": -30.2,
+   "type": "sakura",
+   "scale": 1.17,
+   "rot": 263.3,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1602.2,
+   "z": -28.4,
+   "type": "sakura",
+   "scale": 1.05,
+   "rot": 328.0,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1633.4,
+   "z": -26.0,
+   "type": "sakura",
+   "scale": 0.94,
+   "rot": 181.7,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1164.3,
+   "z": 30.4,
+   "type": "sakura",
+   "scale": 1.15,
+   "rot": 306.2,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1200.5,
+   "z": 29.5,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 141.8,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1234.7,
+   "z": 30.7,
+   "type": "sakura",
+   "scale": 0.94,
+   "rot": 286.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1268.2,
+   "z": 28.7,
+   "type": "sakura",
+   "scale": 1.21,
+   "rot": 219.3,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1297.3,
+   "z": 28.7,
+   "type": "sakura",
+   "scale": 1.01,
+   "rot": 264.7,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1332.6,
+   "z": 27.5,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 123.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1367.9,
+   "z": 27.2,
+   "type": "sakura",
+   "scale": 1.26,
+   "rot": 138.5,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1400.5,
+   "z": 29.2,
+   "type": "sakura",
+   "scale": 0.99,
+   "rot": 319.8,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1435.9,
+   "z": 28.1,
+   "type": "sakura",
+   "scale": 1.12,
+   "rot": 144.5,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1466.4,
+   "z": 25.4,
+   "type": "sakura",
+   "scale": 1.21,
+   "rot": 332.6,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1530.6,
+   "z": 26.5,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 214.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1564.0,
+   "z": 25.6,
+   "type": "sakura",
+   "scale": 1.28,
+   "rot": 97.7,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1601.5,
+   "z": 25.8,
+   "type": "sakura",
+   "scale": 1.12,
+   "rot": 86.4,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": 1634.7,
+   "z": 26.3,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 129.8,
+   "zone": "Ginza_Boulevard_Sakura"
+  },
+  {
+   "x": -637.1,
+   "z": -13.5,
+   "type": "sakura",
+   "scale": 1.06,
+   "rot": 251.4,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -660.6,
+   "z": 403.6,
+   "type": "sakura",
+   "scale": 0.93,
+   "rot": 302.9,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -688.5,
+   "z": 338.0,
+   "type": "sakura",
+   "scale": 1.24,
+   "rot": 129.5,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -420.8,
+   "z": 695.2,
+   "type": "sakura",
+   "scale": 1.39,
+   "rot": 30.6,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -607.1,
+   "z": 48.1,
+   "type": "sakura",
+   "scale": 0.93,
+   "rot": 344.3,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": 610.6,
+   "z": 690.8,
+   "type": "sakura",
+   "scale": 1.16,
+   "rot": 129.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -689.8,
+   "z": 268.0,
+   "type": "sakura",
+   "scale": 1.34,
+   "rot": 203.1,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -625.9,
+   "z": 255.4,
+   "type": "sakura",
+   "scale": 0.92,
+   "rot": 294.8,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -665.5,
+   "z": 77.3,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 201.2,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -186.2,
+   "z": 670.4,
+   "type": "sakura",
+   "scale": 1.3,
+   "rot": 131.7,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -687.0,
+   "z": 485.7,
+   "type": "sakura",
+   "scale": 1.14,
+   "rot": 111.5,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -632.2,
+   "z": 603.7,
+   "type": "sakura",
+   "scale": 0.91,
+   "rot": 352.9,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -628.1,
+   "z": 192.7,
+   "type": "sakura",
+   "scale": 1.03,
+   "rot": 105.7,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -615.7,
+   "z": 432.9,
+   "type": "sakura",
+   "scale": 1.39,
+   "rot": 155.2,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -668.0,
+   "z": 513.0,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 36.6,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -692.8,
+   "z": 557.5,
+   "type": "sakura",
+   "scale": 1.18,
+   "rot": 20.3,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -84.3,
+   "z": 679.0,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 94.4,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -646.8,
+   "z": 659.9,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 269.4,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -630.2,
+   "z": 432.9,
+   "type": "sakura",
+   "scale": 1.29,
+   "rot": 148.7,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -671.0,
+   "z": -18.4,
+   "type": "sakura",
+   "scale": 1.16,
+   "rot": 244.6,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -79.4,
+   "z": 1002.4,
+   "type": "sakura",
+   "scale": 1.09,
+   "rot": 23.2,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": 71.9,
+   "z": 1012.5,
+   "type": "sakura",
+   "scale": 0.98,
+   "rot": 155.4,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": 74.1,
+   "z": 1001.6,
+   "type": "sakura",
+   "scale": 1.2,
+   "rot": 273.7,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -405.9,
+   "z": 1005.7,
+   "type": "sakura",
+   "scale": 1.09,
+   "rot": 76.8,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": 192.8,
+   "z": 1008.6,
+   "type": "sakura",
+   "scale": 1.19,
+   "rot": 158.8,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -446.4,
+   "z": 1012.0,
+   "type": "sakura",
+   "scale": 1.08,
+   "rot": 55.6,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -516.4,
+   "z": 1004.7,
+   "type": "sakura",
+   "scale": 1.02,
+   "rot": 19.9,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -160.4,
+   "z": 1009.1,
+   "type": "sakura",
+   "scale": 1.06,
+   "rot": 9.0,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": 156.9,
+   "z": 1009.3,
+   "type": "sakura",
+   "scale": 1.01,
+   "rot": 59.0,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": 266.8,
+   "z": 1011.3,
+   "type": "sakura",
+   "scale": 0.95,
+   "rot": 145.1,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -558.8,
+   "z": 1001.2,
+   "type": "sakura",
+   "scale": 1.07,
+   "rot": 73.9,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": 284.6,
+   "z": 1002.6,
+   "type": "sakura",
+   "scale": 1.24,
+   "rot": 49.9,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -127.9,
+   "z": 1010.6,
+   "type": "sakura",
+   "scale": 1.31,
+   "rot": 41.6,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -600.7,
+   "z": 1001.5,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 41.1,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -282.9,
+   "z": 1003.5,
+   "type": "sakura",
+   "scale": 1.35,
+   "rot": 354.6,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -638.3,
+   "z": 1006.5,
+   "type": "sakura",
+   "scale": 1.02,
+   "rot": 285.5,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -20.5,
+   "z": 1003.9,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 265.4,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -195.5,
+   "z": 1006.1,
+   "type": "sakura",
+   "scale": 1.08,
+   "rot": 319.5,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -474.7,
+   "z": 1004.5,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 9.5,
+   "zone": "Asakusa_Sakura"
+  },
+  {
+   "x": -2550.7,
+   "z": -1652.0,
+   "type": "sakura",
+   "scale": 1.37,
+   "rot": 163.0,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2923.1,
+   "z": -2785.4,
+   "type": "sakura",
+   "scale": 1.37,
+   "rot": 217.3,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2757.4,
+   "z": -2909.8,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 98.4,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2508.4,
+   "z": -3052.3,
+   "type": "sakura",
+   "scale": 1.19,
+   "rot": 196.0,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2330.0,
+   "z": -3374.6,
+   "type": "sakura",
+   "scale": 1.38,
+   "rot": 117.5,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -3099.4,
+   "z": -3373.5,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 170.3,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -1428.5,
+   "z": -2647.8,
+   "type": "sakura",
+   "scale": 1.14,
+   "rot": 239.2,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2638.7,
+   "z": -3284.5,
+   "type": "sakura",
+   "scale": 1.0,
+   "rot": 263.8,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2839.5,
+   "z": -2235.1,
+   "type": "sakura",
+   "scale": 0.99,
+   "rot": 246.0,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -1998.8,
+   "z": -1508.9,
+   "type": "sakura",
+   "scale": 1.0,
+   "rot": 198.1,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2491.4,
+   "z": -1880.4,
+   "type": "sakura",
+   "scale": 1.18,
+   "rot": 289.4,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -1758.9,
+   "z": -1417.9,
+   "type": "sakura",
+   "scale": 1.38,
+   "rot": 301.3,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -1515.0,
+   "z": -1597.9,
+   "type": "sakura",
+   "scale": 1.31,
+   "rot": 136.7,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2384.2,
+   "z": -1647.8,
+   "type": "sakura",
+   "scale": 1.25,
+   "rot": 62.6,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2547.0,
+   "z": -1670.8,
+   "type": "sakura",
+   "scale": 1.12,
+   "rot": 141.1,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2530.9,
+   "z": -2368.1,
+   "type": "sakura",
+   "scale": 1.35,
+   "rot": 227.1,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2470.6,
+   "z": -2011.0,
+   "type": "sakura",
+   "scale": 0.98,
+   "rot": 7.0,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -3120.4,
+   "z": -2863.4,
+   "type": "sakura",
+   "scale": 0.96,
+   "rot": 65.8,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2351.5,
+   "z": -3030.7,
+   "type": "sakura",
+   "scale": 0.97,
+   "rot": 301.8,
+   "zone": "Residential_Sakura"
+  },
+  {
+   "x": -2564.6,
+   "z": -2023.4,
+   "type": "sakura",
+   "scale": 1.0,
+   "rot": 44.9,
+   "zone": "Residential_Sakura"
+  }
+ ],
+ "tree_counts": {
+  "total": 585,
+  "green": 430,
+  "sakura": 155,
+  "tris_estimate": 221940
+ }
+}
