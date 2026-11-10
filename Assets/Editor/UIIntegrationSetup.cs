@@ -113,16 +113,19 @@ public static class UIIntegrationSetup
             if (AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(f.asset) != null)
                 AssetDatabase.DeleteAsset(f.asset);
             TMP_FontAsset fa = TMP_FontAsset.CreateFontAsset(
-                font, f.size, 5, GlyphRenderMode.SDFAA, f.atlas, f.atlas, AtlasPopulationMode.Static, f.multi);
+                font, f.size, 5, GlyphRenderMode.SDFAA, f.atlas, f.atlas, AtlasPopulationMode.Dynamic, f.multi);
             if (fa == null) { Debug.LogError("[UIIntegrationSetup] CreateFontAsset failed: " + f.ttf); continue; }
-            // CreateFontAsset leaves the atlas EMPTY (0 glyphs) — populate it
-            // explicitly, or every TMP label using this font renders blank.
-            var unicodes = new List<uint>();
+            // Pre-warm the atlas with the characters the UI needs. (Dynamic
+            // assets also populate on demand at runtime, so text still
+            // renders even if a character was missed here — Static assets
+            // would render blank instead, which is why Dynamic is used.)
+            var sb = new System.Text.StringBuilder();
             foreach (var r in f.ranges)
-                for (uint c = r[0]; c <= r[1]; c++) unicodes.Add(c);
-            fa.TryAddCharacters(unicodes.ToArray(), out uint[] missing);
-            if (missing != null && missing.Length > 0)
-                Debug.LogWarning("[UIIntegrationSetup] " + f.asset + " missing " + missing.Length + " glyphs from the source font.");
+                for (uint c = r[0]; c <= r[1]; c++) sb.Append((char)c);
+            bool added = fa.TryAddCharacters(sb.ToString(), out string missingChars);
+            Debug.Log("[UIIntegrationSetup] " + f.asset + " TryAddCharacters ok=" + added +
+                " missing=" + (missingChars == null ? 0 : missingChars.Length) +
+                " glyphs=" + fa.glyphTable.Count + " chars=" + fa.characterTable.Count);
             AssetDatabase.CreateAsset(fa, f.asset);
             foreach (Texture2D tex in fa.atlasTextures)
                 if (tex != null) AssetDatabase.AddObjectToAsset(tex, f.asset);
@@ -135,6 +138,7 @@ public static class UIIntegrationSetup
         }
         // Vazirmatn as fallback on every other font asset, so FA labels
         // render even when the primary font has no Arabic glyphs.
+        Debug.Log("[UIIntegrationSetup] Setting Vazirmatn fallback...");
         if (vazirmatn != null)
         {
             foreach (var kv in created)
@@ -153,25 +157,30 @@ public static class UIIntegrationSetup
                 EditorUtility.SetDirty(kv.Value);
             }
         }
+        Debug.Log("[UIIntegrationSetup] Saving assets...");
         AssetDatabase.SaveAssets();
+        Debug.Log("[UIIntegrationSetup] Writing report...");
         foreach (var kv in created)
         {
             string guid = AssetDatabase.AssetPathToGUID(kv.Key);
-            int matFileId = ReadMaterialFileId(kv.Key);
+            long matFileId = ReadMaterialFileId(kv.Key);
             report.Add("FONT\t" + kv.Key + "\t" + guid + "\t" + matFileId);
+            Debug.Log("[UIIntegrationSetup] Report line: " + kv.Key + " guid=" + guid + " matFileId=" + matFileId);
         }
 
         File.WriteAllLines(ReportPath, report.ToArray());
         Debug.Log("[UIIntegrationSetup] DONE. Report: " + ReportPath);
     }
 
-    static int ReadMaterialFileId(string assetPath)
+    static long ReadMaterialFileId(string assetPath)
     {
         string full = Path.Combine(Application.dataPath, assetPath.Substring("Assets/".Length));
         if (!File.Exists(full)) return 0;
         string text = File.ReadAllText(full);
-        var m = Regex.Match(text, @"--- !u!21 &(\d+)");
-        return m.Success ? int.Parse(m.Groups[1].Value) : 0;
+        // Unity 6 fileIDs are 64-bit and may be negative (e.g. 8508357141320995048
+        // or -6236365517726703309) — int.Parse overflows on them (run 4 bug).
+        var m = Regex.Match(text, @"--- !u!21 &(-?\d+)");
+        return m.Success ? long.Parse(m.Groups[1].Value) : 0;
     }
 
     public static void ValidateUI()
