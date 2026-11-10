@@ -1,0 +1,5 @@
+# Git LFS — only the three map files over GitHub's 100 MB regular-file limit.
+# Everything else is stored as regular git objects.
+Assets/Resources/Models/Map/Plateau/shibuya/lod2/53393585_bldg_6677.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Resources/Models/Map/Plateau/shinjuku/lod2/53394535_bldg_6677.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Resources/Models/Map/Plateau/tokyo-bay/brid/53393652_brid_6677.fbx filter=lfs diff=lfs merge=lfs -text
