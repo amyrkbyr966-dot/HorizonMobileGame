@@ -1,0 +1,38 @@
+{
+ "source": "/home/hatch/workspace/models-downloads/plateau/extracted/shibuya/13100_tokyo23-ku_2020_fbx_3_op/brid/53393585_brid_6697.fbx",
+ "output": "/home/hatch/workspace/model-pipeline/plateau-out/shibuya/brid/53393585_brid_6697.fbx",
+ "origin": [
+  -12026.82,
+  -37768.56
+ ],
+ "attribution": "Source: Project PLATEAU by MLIT",
+ "src_objects": 1123,
+ "src_tris": 3188,
+ "src_verts": 5434,
+ "images": 7,
+ "images_resized": 7,
+ "max_tex_dim_before": 4096,
+ "max_tex": 512,
+ "textures_stripped": false,
+ "material_groups": 8,
+ "merge_mode": "join",
+ "merged_tris": 3188,
+ "out_meshes": 8,
+ "decimated": [],
+ "final_tris": 3188,
+ "final_verts": 5434,
+ "bounds_unity": {
+  "min": [
+   -665.92,
+   22.26,
+   -624.64
+  ],
+  "max": [
+   -48.09,
+   50.2,
+   -267.09
+  ]
+ },
+ "output_bytes": 36392284,
+ "seconds": 15.1
+}

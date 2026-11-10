@@ -1,0 +1,37 @@
+{
+ "source": "/home/hatch/workspace/models-downloads/plateau/extracted/shibuya/13100_tokyo23-ku_2020_fbx_3_op/bldg/lod1/53393584_bldg_6677.fbx",
+ "output": "/home/hatch/workspace/model-pipeline/plateau-out/shibuya/lod1/53393584_bldg_6677.fbx",
+ "origin": [
+  -12026.82,
+  -37768.56
+ ],
+ "attribution": "Source: Project PLATEAU by MLIT",
+ "src_objects": 3007,
+ "src_tris": 72296,
+ "src_verts": 42128,
+ "images": 0,
+ "images_resized": 0,
+ "max_tex_dim_before": 0,
+ "max_tex": 512,
+ "textures_stripped": false,
+ "material_groups": 1,
+ "merged_tris": 72296,
+ "out_meshes": 1,
+ "decimated": [],
+ "final_tris": 72296,
+ "final_verts": 42128,
+ "bounds_unity": {
+  "min": [
+   -2327.38,
+   12.51,
+   -1080.13
+  ],
+  "max": [
+   -1176.3,
+   112.64,
+   -120.77
+  ]
+ },
+ "output_bytes": 1177308,
+ "seconds": 8.5
+}
