@@ -1,0 +1,38 @@
+{
+ "source": "/home/hatch/workspace/models-downloads/plateau/extracted/shinjuku/13100_tokyo23-ku_2020_fbx_3_op/brid/53394525_brid_6677.fbx",
+ "output": "/home/hatch/workspace/model-pipeline/plateau-out/shinjuku/brid/53394525_brid_6677.fbx",
+ "origin": [
+  -12026.82,
+  -37768.56
+ ],
+ "attribution": "Source: Project PLATEAU by MLIT",
+ "src_objects": 2314,
+ "src_tris": 7924,
+ "src_verts": 12546,
+ "images": 21,
+ "images_resized": 20,
+ "max_tex_dim_before": 4096,
+ "max_tex": 512,
+ "textures_stripped": false,
+ "material_groups": 22,
+ "merge_mode": "join",
+ "merged_tris": 7924,
+ "out_meshes": 22,
+ "decimated": [],
+ "final_tris": 7924,
+ "final_verts": 12546,
+ "bounds_unity": {
+  "min": [
+   -956.82,
+   32.29,
+   2735.29
+  ],
+  "max": [
+   -35.93,
+   60.11,
+   3603.79
+  ]
+ },
+ "output_bytes": 97414780,
+ "seconds": 46.7
+}
