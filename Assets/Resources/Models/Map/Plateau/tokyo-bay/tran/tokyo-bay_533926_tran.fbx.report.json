@@ -1,0 +1,38 @@
+{
+ "source": "/home/hatch/workspace/models-downloads/plateau/extracted/tokyo-bay/13100_tokyo23-ku_2020_fbx_3_op/tran/533926_tran_6677.fbx",
+ "output": "/home/hatch/workspace/model-pipeline/plateau-out/tokyo-bay/tran/tokyo-bay_533926_tran.fbx",
+ "origin": [
+  -12026.82,
+  -37768.56
+ ],
+ "attribution": "Source: Project PLATEAU by MLIT",
+ "src_objects": 299,
+ "src_tris": 28116,
+ "src_verts": 28714,
+ "images": 0,
+ "images_resized": 0,
+ "max_tex_dim_before": 0,
+ "max_tex": 512,
+ "textures_stripped": false,
+ "material_groups": 1,
+ "merge_mode": "join",
+ "merged_tris": 0,
+ "out_meshes": 0,
+ "decimated": [],
+ "final_tris": 0,
+ "final_verts": 0,
+ "bounds_unity": {
+  "min": [
+   1e+18,
+   1e+18,
+   1e+18
+  ],
+  "max": [
+   -1e+18,
+   -1e+18,
+   -1e+18
+  ]
+ },
+ "output_bytes": 4060,
+ "seconds": 0.6
+}

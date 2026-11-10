@@ -1,0 +1,38 @@
+{
+ "source": "/home/hatch/workspace/models-downloads/plateau/extracted/ginza/13100_tokyo23-ku_2020_fbx_3_op/bldg/lod1/53393632_bldg_6677.fbx",
+ "output": "/home/hatch/workspace/model-pipeline/plateau-out/tokyo-bay/lod1/53393632_bldg_6677.fbx",
+ "origin": [
+  -12026.82,
+  -37768.56
+ ],
+ "attribution": "Source: Project PLATEAU by MLIT",
+ "src_objects": 84,
+ "src_tris": 2368,
+ "src_verts": 1348,
+ "images": 0,
+ "images_resized": 0,
+ "max_tex_dim_before": 0,
+ "max_tex": 512,
+ "textures_stripped": false,
+ "material_groups": 1,
+ "merge_mode": "join",
+ "merged_tris": 2368,
+ "out_meshes": 1,
+ "decimated": [],
+ "final_tris": 2368,
+ "final_verts": 1348,
+ "bounds_unity": {
+  "min": [
+   6801.77,
+   1.96,
+   -5676.21
+  ],
+  "max": [
+   7895.37,
+   58.37,
+   -4708.36
+  ]
+ },
+ "output_bytes": 49996,
+ "seconds": 0.4
+}

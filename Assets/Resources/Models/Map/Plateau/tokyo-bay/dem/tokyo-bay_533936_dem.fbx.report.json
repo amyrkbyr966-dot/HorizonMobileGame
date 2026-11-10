@@ -1,0 +1,45 @@
+{
+ "source": "/home/hatch/workspace/models-downloads/plateau/extracted/ginza/13100_tokyo23-ku_2020_fbx_3_op/dem/533936_dem_6677.fbx",
+ "output": "/home/hatch/workspace/model-pipeline/plateau-out/tokyo-bay/dem/tokyo-bay_533936_dem.fbx",
+ "origin": [
+  -12026.82,
+  -37768.56
+ ],
+ "attribution": "Source: Project PLATEAU by MLIT",
+ "src_objects": 1,
+ "src_tris": 1046698,
+ "src_verts": 525630,
+ "images": 0,
+ "images_resized": 0,
+ "max_tex_dim_before": 0,
+ "max_tex": 512,
+ "textures_stripped": false,
+ "material_groups": 1,
+ "merge_mode": "join",
+ "merged_tris": 63646,
+ "out_meshes": 1,
+ "decimated": [
+  {
+   "mesh": "plateau_merged",
+   "tris_before": 63646,
+   "tris_after": 49999,
+   "ratio": 0.7855953241366307
+  }
+ ],
+ "final_tris": 49999,
+ "final_verts": 25220,
+ "bounds_unity": {
+  "min": [
+   5625.82,
+   -10.8,
+   -4392.44
+  ],
+  "max": [
+   7855.82,
+   18.26,
+   -2160.44
+  ]
+ },
+ "output_bytes": 1288348,
+ "seconds": 5.4
+}
