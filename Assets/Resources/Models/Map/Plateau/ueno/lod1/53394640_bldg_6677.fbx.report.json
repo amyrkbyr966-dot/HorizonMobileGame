@@ -1,0 +1,38 @@
+{
+ "source": "/home/hatch/workspace/models-downloads/plateau/extracted/asakusa-akihabara-ueno/13100_tokyo23-ku_2020_fbx_3_op/bldg/lod1/53394640_bldg_6677.fbx",
+ "output": "/home/hatch/workspace/model-pipeline/plateau-out/ueno/lod1/53394640_bldg_6677.fbx",
+ "origin": [
+  -12026.82,
+  -37768.56
+ ],
+ "attribution": "Source: Project PLATEAU by MLIT",
+ "src_objects": 1757,
+ "src_tris": 37764,
+ "src_verts": 22384,
+ "images": 0,
+ "images_resized": 0,
+ "max_tex_dim_before": 0,
+ "max_tex": 512,
+ "textures_stripped": false,
+ "material_groups": 1,
+ "merge_mode": "join",
+ "merged_tris": 37764,
+ "out_meshes": 1,
+ "decimated": [],
+ "final_tris": 37764,
+ "final_verts": 22384,
+ "bounds_unity": {
+  "min": [
+   4425.15,
+   -2.3,
+   4441.11
+  ],
+  "max": [
+   5621.88,
+   150.58,
+   5452.05
+  ]
+ },
+ "output_bytes": 628844,
+ "seconds": 3.2
+}
