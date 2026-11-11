@@ -108,9 +108,13 @@ public class HUD : MonoBehaviour
             // and overlapped the DRIFT line. Never wrap the speed.
             speedText.textWrappingMode = TextWrappingModes.NoWrap;
         }
-        // Removed features (2026-11-07): the nitro / wanted HUD objects
-        // were deleted from HUD.prefab by the UI pass (2026-11-10), so
-        // the runtime hiding is no longer needed.
+        // Removed feature (2026-11-07): nitro was removed from the
+        // game, but the Main scene still ships a static "NITRO 100%"
+        // label (NitroText) that no code ever updates — the UI pass
+        // did NOT actually delete it from the scene, so hide it here
+        // at runtime (the scene file is never edited by hand).
+        var nitro = GameObject.Find("NitroText");
+        if (nitro != null) nitro.SetActive(false);
     }
 
     UnityEngine.UI.Image FindImage(string objectName)

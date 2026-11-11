@@ -77,6 +77,13 @@ public class MainMenu : MonoBehaviour
         if (os != null) ownedStateIcon = os.GetComponent<UnityEngine.UI.Image>();
         var gp = GameObject.Find("GarageUpgradesPanel");
         if (gp != null) garageUI = gp.GetComponent<GarageUpgradesUI>();
+        // Removed feature (2026-11-07): police chase was removed
+        // from the game, but the MainMenu scene still ships the
+        // POLICE CHASE button. Hide it at runtime (the scene file
+        // is never edited by hand). Hiding only removes the button
+        // from view/input; no menu code references it.
+        var police = GameObject.Find("PoliceChaseButton");
+        if (police != null) police.SetActive(false);
         // Credits: PLATEAU map attribution (CC-BY 4.0, required) +
         // the UI asset attribution (ui-assets-manifest §4c).
         if (creditsText != null)

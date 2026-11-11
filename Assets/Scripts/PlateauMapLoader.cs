@@ -266,6 +266,13 @@ public class PlateauMapLoader : MonoBehaviour
         // Shibuya terrain is in — otherwise the fallback stays).
         if (shibuyaDemLoaded) HideLegacyCityVisuals();
 
+        // Safety-net ground plane (Build #6 drive-test fix) — MUST run
+        // before SnapWorldObjectsToGround(): the PLATEAU raycast finds
+        // no ground at the spawn, so without this the car falls through
+        // the world. The plane guarantees ground at y = 0 under the
+        // whole Shibuya area (see EnsureSpawnGround).
+        EnsureSpawnGround();
+
         // 4. Snap the player and the static world dressing onto the
         // real terrain (old y ~= 0 poses would be buried / floating).
         SnapWorldObjectsToGround();
@@ -507,6 +514,95 @@ public class PlateauMapLoader : MonoBehaviour
         Debug.Log("[PlateauMapLoader] legacy procedural city visuals hidden ("
             + hidden + " root objects) — PLATEAU Shibuya is the city now; "
             + "the procedural code stays as the fallback if PLATEAU fails to load");
+    }
+
+    /// <summary>SAFETY-NET ground plane (Build #6 drive-test fix).
+    /// The PLATEAU dem/tran raycast (TryGetGroundHeight) returns nothing
+    /// at the Shibuya spawn and across most of the map (0/585 trees on
+    /// live ground; the car fell through the world and reset 66 times
+    /// in 6 min). The raycast failure cause is undetermined, so this
+    /// does NOT depend on it: it creates a large flat ground plane at
+    /// y = 0 with a BoxCollider, registered via RegisterGroundCollider,
+    /// so TryGetGroundHeight always finds ground. TryGetGroundHeight
+    /// returns the HIGHEST hit, so where real PLATEAU ground exists
+    /// above y = 0 it still wins; the plane is only the floor under
+    /// the voids. Runs before SnapWorldObjectsToGround() so the player
+    /// snaps onto it (y = 0.6). The plane is static and parented to
+    /// this loader (never cell-streamed), so it is always present. It
+    /// does not hide or remove PLATEAU buildings or roads.</summary>
+    void EnsureSpawnGround()
+    {
+        const float half = 1000f; // 2000 x 2000 m, centred on the spawn
+        const float centreX = 0f;
+        const float centreZ = -40f;
+        var go = new GameObject("SpawnGroundSafetyNet");
+        go.transform.SetParent(transform, false);
+        go.transform.position = new Vector3(centreX, 0f, centreZ);
+        go.isStatic = true;
+
+        // Visible top surface: a 2000 x 2000 m quad at y = 0, dark
+        // asphalt (same colour as Assets/Materials/Asphalt.mat, with
+        // the asphalt texture tiled when it loads from Resources).
+        Mesh mesh = new Mesh();
+        mesh.name = "SafetyNetGround";
+        Vector3[] verts = new Vector3[]
+        {
+            new Vector3(-half, 0f, -half), new Vector3(half, 0f, -half),
+            new Vector3(half, 0f, half), new Vector3(-half, 0f, half),
+        };
+        Vector2[] uvs = new Vector2[]
+        {
+            new Vector2(0f, 0f), new Vector2(1f, 0f),
+            new Vector2(1f, 1f), new Vector2(0f, 1f),
+        };
+        // Winding gives an upward (+Y) normal: (0,2,1) and (0,3,2).
+        mesh.vertices = verts;
+        mesh.uv = uvs;
+        mesh.triangles = new int[] { 0, 2, 1, 0, 3, 2 };
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+        var mf = go.AddComponent<MeshFilter>();
+        mf.sharedMesh = mesh;
+        var mr = go.AddComponent<MeshRenderer>();
+        mr.sharedMaterial = CreateAsphaltMaterial();
+        mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        mr.receiveShadows = true;
+
+        // Physics: a BoxCollider whose TOP face is at y = 0 (the box
+        // spans y -2..0), so the downward raycast and the wheels rest
+        // on y = 0. A BoxCollider is cheap and reliable; a MeshCollider
+        // is not needed for a flat plane.
+        var box = go.AddComponent<BoxCollider>();
+        box.size = new Vector3(half * 2f, 2f, half * 2f);
+        box.center = new Vector3(0f, -1f, 0f);
+        RegisterGroundCollider(box);
+        Debug.Log("[PlateauMapLoader] safety-net ground plane created: "
+            + "2000x2000 m at (0, 0, -40), top y=0, collider registered");
+    }
+
+    /// <summary>Dark asphalt material for the safety-net ground
+    /// (mirrors Assets/Materials/Asphalt.mat: URP Lit, base colour
+    /// 0.16 grey, metallic 0, smoothness 0). The asphalt texture is
+    /// tiled when it loads from Resources; plain dark grey otherwise.
+    /// Created in code because the .mat asset is not under Resources
+    /// and cannot be loaded at runtime.</summary>
+    static Material CreateAsphaltMaterial()
+    {
+        Shader shader = Shader.Find("Universal Render Pipeline/Lit");
+        if (shader == null) shader = Shader.Find("Standard");
+        var mat = new Material(shader);
+        mat.name = "SafetyNetAsphalt";
+        mat.color = new Color(0.16f, 0.16f, 0.17f);
+        if (mat.HasProperty("_Metallic")) mat.SetFloat("_Metallic", 0f);
+        if (mat.HasProperty("_Smoothness")) mat.SetFloat("_Smoothness", 0f);
+        Texture2D tex = Resources.Load<Texture2D>("Textures/asphalt");
+        if (tex != null)
+        {
+            mat.mainTexture = tex;
+            // 512 px tile every 10 m across the 2000 m plane.
+            mat.mainTextureScale = new Vector2(200f, 200f);
+        }
+        return mat;
     }
 
     /// <summary>Shift the player and the static world dressing onto the
