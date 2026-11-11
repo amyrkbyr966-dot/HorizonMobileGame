@@ -96,6 +96,13 @@ public class MainMenu : MonoBehaviour
         // from view/input; no menu code references it.
         var police = GameObject.Find("PoliceChaseButton");
         if (police != null) police.SetActive(false);
+        // User (2026-11-11 17:07): "build it for me yourself" — the
+        // downloaded MegaUI needs an itch.io account to claim, so I
+        // build the real menu myself. Professional Forza-style layout
+        // (title top-left, clean menu column left, big car showcase
+        // right, money top-right, slim bottom bar). All at runtime so
+        // the scene file is never hand-edited.
+        LayoutMenu();
         // Credits: PLATEAU map attribution (CC-BY 4.0, required) +
         // the UI asset attribution (ui-assets-manifest §4c).
         if (creditsText != null)
@@ -113,6 +120,96 @@ public class MainMenu : MonoBehaviour
         // < > arrows (was an empty grey box).
         SetupCarPreview();
         RefreshMenu();
+    }
+
+    /// <summary>Professional menu layout (built 2026-11-11 at the user's
+    /// request: "build it for me yourself"). Replaces the scattered
+    /// button grid with a Forza-style layout: title top-left, a clean
+    /// vertical menu column on the left, a large car showcase on the
+    /// right (3D turntable + name/stats/price + ‹ › arrows + Buy/Select),
+    /// player money top-right, and a slim bottom bar for secondary
+    /// actions/settings/quit. All at runtime so the scene file is never
+    /// hand-edited. Coordinates are for the 1280x720 reference; the
+    /// anchors keep it proportional on phones.</summary>
+    void LayoutMenu()
+    {
+        Vector2 C = new Vector2(0.5f, 0.5f);
+        // Title top-left + subtitle under it.
+        Place("TitleText", new Vector2(0f, 1f), new Vector2(40f, -40f), new Vector2(600f, 90f));
+        SetFont("TitleText", 64f);
+        Place("SubtitleText", new Vector2(0f, 1f), new Vector2(40f, -135f), new Vector2(600f, 36f));
+        SetFont("SubtitleText", 24f);
+        // Money top-right.
+        Place("MoneyText", new Vector2(1f, 1f), new Vector2(-40f, -48f), new Vector2(320f, 48f));
+        SetFont("MoneyText", 28f);
+        // Left column: main actions (340x62).
+        Place("FreeRoamButton", C, new Vector2(-430f, 100f), new Vector2(340f, 62f));
+        Place("RaceButton", C, new Vector2(-430f, 28f), new Vector2(340f, 62f));
+        Place("GarageButton", C, new Vector2(-430f, -44f), new Vector2(340f, 62f));
+        Place("ChampionshipButton", C, new Vector2(-430f, -116f), new Vector2(340f, 62f));
+        Place("TimeTrialButton", C, new Vector2(-430f, -188f), new Vector2(340f, 62f));
+        Place("StreetRaceButton", C, new Vector2(-430f, -260f), new Vector2(340f, 62f));
+        // Right showcase: arrows flank the 3D preview.
+        Place("PrevCarButton", C, new Vector2(45f, 70f), new Vector2(64f, 96f));
+        Place("NextCarButton", C, new Vector2(605f, 70f), new Vector2(64f, 96f));
+        // Car info under the showcase.
+        Place("CarNameText", C, new Vector2(330f, -132f), new Vector2(520f, 48f));
+        SetFont("CarNameText", 34f);
+        Place("CarStatsText", C, new Vector2(330f, -176f), new Vector2(520f, 34f));
+        SetFont("CarStatsText", 22f);
+        Place("CarPriceText", C, new Vector2(330f, -212f), new Vector2(520f, 34f));
+        SetFont("CarPriceText", 22f);
+        Place("BuySelectButton", C, new Vector2(330f, -260f), new Vector2(280f, 60f));
+        // Bottom bar: secondary + settings + quit (54 tall).
+        Place("DeliveryButton", C, new Vector2(-430f, -325f), new Vector2(200f, 54f));
+        Place("CollectiblesButton", C, new Vector2(-210f, -325f), new Vector2(200f, 54f));
+        Place("SettingsQualityButton", C, new Vector2(30f, -325f), new Vector2(200f, 54f));
+        Place("SettingsLanguageButton", C, new Vector2(250f, -325f), new Vector2(200f, 54f));
+        Place("QuitButton", C, new Vector2(500f, -325f), new Vector2(160f, 54f));
+        // Button label font sizes to fit the new button sizes.
+        SetLabelFont("FreeRoamButton", 26f);
+        SetLabelFont("RaceButton", 26f);
+        SetLabelFont("GarageButton", 26f);
+        SetLabelFont("ChampionshipButton", 26f);
+        SetLabelFont("TimeTrialButton", 26f);
+        SetLabelFont("StreetRaceButton", 26f);
+        SetLabelFont("BuySelectButton", 24f);
+        SetLabelFont("DeliveryButton", 20f);
+        SetLabelFont("CollectiblesButton", 20f);
+        SetLabelFont("SettingsQualityButton", 20f);
+        SetLabelFont("SettingsLanguageButton", 20f);
+        SetLabelFont("QuitButton", 20f);
+        SetLabelFont("PrevCarButton", 40f);
+        SetLabelFont("NextCarButton", 40f);
+    }
+
+    /// <summary>Move + resize a named menu object (sets its anchor,
+    /// anchored position and size). Missing objects are skipped.</summary>
+    static void Place(string objectName, Vector2 anchor, Vector2 pos, Vector2 size)
+    {
+        var go = GameObject.Find(objectName);
+        if (go == null) return;
+        var rt = go.GetComponent<RectTransform>();
+        if (rt == null) return;
+        rt.anchorMin = anchor;
+        rt.anchorMax = anchor;
+        rt.pivot = new Vector2(0.5f, 0.5f);
+        rt.anchoredPosition = pos;
+        rt.sizeDelta = size;
+    }
+
+    /// <summary>Set the font size of a named text object (TMP).</summary>
+    static void SetFont(string objectName, float size)
+    {
+        var t = FindText(objectName);
+        if (t != null) t.fontSize = size;
+    }
+
+    /// <summary>Set the font size of a button's label child
+    /// (named "&lt;ButtonName&gt;Label").</summary>
+    static void SetLabelFont(string buttonName, float size)
+    {
+        SetFont(buttonName + "Label", size);
     }
 
     /// <summary>Style the menu's flat coloured rectangles into real
@@ -160,21 +257,10 @@ public class MainMenu : MonoBehaviour
     {
         var canvasObj = GameObject.Find("MenuCanvas");
         if (canvasObj == null) return;
-        var prevBtn = GameObject.Find("PrevCarButton");
-        var nextBtn = GameObject.Find("NextCarButton");
-        if (prevBtn == null || nextBtn == null) return;
-        var prevRT = prevBtn.GetComponent<RectTransform>();
-        var nextRT = nextBtn.GetComponent<RectTransform>();
-        if (prevRT == null || nextRT == null) return;
-        // RawImage centred in the gap between the two arrow buttons,
-        // sized to the gap (computed from the buttons at runtime, so it
-        // adapts to the canvas scaling).
-        float midX = (prevRT.anchoredPosition.x + nextRT.anchoredPosition.x) * 0.5f;
-        float midY = (prevRT.anchoredPosition.y + nextRT.anchoredPosition.y) * 0.5f;
-        float gapW = Mathf.Abs(nextRT.anchoredPosition.x - prevRT.anchoredPosition.x) - prevRT.sizeDelta.x;
-        float gapH = prevRT.sizeDelta.y;
-        if (gapW < 40f) gapW = 40f;
         if (GameObject.Find("CarPreviewImage") != null) return;
+        // Fixed showcase rect (matches LayoutMenu): large 3D turntable
+        // on the right side of the menu, 480x300 at (330,50). The old
+        // code sized it from the tiny gap between the ‹ › arrows.
         var go = new GameObject("CarPreviewImage");
         go.transform.SetParent(canvasObj.transform, false);
         previewImage = go.AddComponent<UnityEngine.UI.RawImage>();
@@ -182,10 +268,12 @@ public class MainMenu : MonoBehaviour
         rt.anchorMin = new Vector2(0.5f, 0.5f);
         rt.anchorMax = new Vector2(0.5f, 0.5f);
         rt.pivot = new Vector2(0.5f, 0.5f);
-        rt.anchoredPosition = new Vector2(midX, midY);
-        rt.sizeDelta = new Vector2(gapW, gapH);
+        rt.anchoredPosition = new Vector2(330f, 50f);
+        rt.sizeDelta = new Vector2(480f, 300f);
         // RenderTexture + preview camera + light on the high stage.
-        previewRT = new RenderTexture(256, 256, 16, RenderTextureFormat.ARGB32);
+        // 512x320 matches the 480x300 aspect (1.6) so the car is not
+        // stretched.
+        previewRT = new RenderTexture(512, 320, 16, RenderTextureFormat.ARGB32);
         previewRT.Create();
         previewImage.texture = previewRT;
         var camGo = new GameObject("CarPreviewCamera");
