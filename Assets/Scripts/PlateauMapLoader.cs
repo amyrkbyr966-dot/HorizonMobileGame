@@ -18,8 +18,12 @@ using UnityEngine.SceneManagement;
 ///     underneath them). Each district root is therefore shifted down by
 ///     the ground height sampled at its anchor (district centre), so the
 ///     terrain at every district centre sits at y = 0. The shift is
-///     sampled at runtime from the district's own dem/tran colliders (no
-///     hard-coded heights) and logged per district.
+///     sampled at runtime from the district's own dem/tran colliders
+///     and logged per district. If the live sample finds nothing (the
+///     ground meshes were imported non-readable, so the MeshColliders
+///     never cooked — the Builds #6/#7 failure), a baked anchor height
+///     measured directly from the FBX geometry is used instead
+///     (BakedAnchorHeight), so the city still lands on the ground.
 ///  2. CELL ROOTS — every tile is reparented (world position preserved)
 ///     under the Cell_xx_yy root (500 m grid, DistrictData) that contains
 ///     the tile's bounds centre, and the root is registered with
@@ -365,6 +369,20 @@ public class PlateauMapLoader : MonoBehaviour
                 foreach (MeshFilter mf in go.GetComponentsInChildren<MeshFilter>())
                 {
                     if (mf.sharedMesh == null) continue;
+                    // Ground meshes MUST be readable (Read/Write Enabled
+                    // in the FBX import) or the MeshCollider cannot cook
+                    // and every ground raycast silently misses — this is
+                    // why all 7 districts floated in Builds #6/#7 (the
+                    // dem/tran meshes were imported non-readable). Log it
+                    // loud so a lost import flag is diagnosable at once.
+                    if (!mf.sharedMesh.isReadable)
+                    {
+                        Debug.LogError("[PlateauMapLoader] ground mesh '"
+                            + mf.sharedMesh.name + "' in " + f.ResourcePath
+                            + " is NOT readable — MeshCollider will not cook, "
+                            + "ground raycasts will miss. Enable Read/Write "
+                            + "in the FBX import settings.");
+                    }
                     var col = mf.gameObject.AddComponent<MeshCollider>();
                     col.sharedMesh = mf.sharedMesh;
                     col.convex = false;
@@ -393,7 +411,8 @@ public class PlateauMapLoader : MonoBehaviour
         GroundColliders.AddRange(result.groundColliders);
         Debug.Log("[PlateauMapLoader] district " + info.displayName
             + ": " + loaded + "/" + files.Length + " files, "
-            + tris + " tris, offset " + root.transform.position);
+            + tris + " tris, ground colliders " + result.groundColliders.Count
+            + ", offset " + root.transform.position);
         return result;
     }
 
@@ -417,9 +436,42 @@ public class PlateauMapLoader : MonoBehaviour
                 + ": no ground under the anchor, using median of " + hits.Count + " ring samples");
             return hits[hits.Count / 2];
         }
+        // Last resort: the live raycast found nothing (e.g. the ground
+        // meshes were imported non-readable so the MeshColliders never
+        // cooked — see LoadDistrict). Use the anchor height measured
+        // directly from the converted FBX geometry (Blender BVH raycast,
+        // 2026-11-11) instead of 0, so the city still lands on the
+        // driving surface instead of floating 3..33 m above it.
+        float baked = BakedAnchorHeight(id);
         Debug.LogWarning("[PlateauMapLoader] district " + DistrictData.Get(id).displayName
-            + ": no ground found anywhere near the anchor — shift 0, terrain will float");
-        return 0f;
+            + ": no ground found anywhere near the anchor — using baked "
+            + "anchor height " + baked.ToString("0.0") + " m (measured from FBX)");
+        return baked;
+    }
+
+    /// <summary>Anchor ground height (metres) measured directly from the
+    /// converted PLATEAU dem/tran FBX geometry with a Blender BVH raycast
+    /// (2026-11-11): the highest hit at each district anchor — the same
+    /// quantity SampleAnchorHeight samples live from the colliders.
+    /// Used ONLY when the live raycast finds nothing (ground meshes
+    /// non-readable / colliders uncooked), so the city still lands on
+    /// the driving surface instead of floating. The values are the real
+    /// Tokyo elevations at the anchors: Shibuya crossing sits in a
+    /// valley, Shinjuku on a plateau, the bay districts near sea level,
+    /// Ueno Park on a hill.</summary>
+    static float BakedAnchorHeight(DistrictData.DistrictId id)
+    {
+        switch (id)
+        {
+            case DistrictData.DistrictId.Shibuya: return 15.2f;
+            case DistrictData.DistrictId.Shinjuku: return 32.6f;
+            case DistrictData.DistrictId.Ginza: return 4.0f;
+            case DistrictData.DistrictId.Asakusa: return 3.4f;
+            case DistrictData.DistrictId.Akihabara: return 4.4f;
+            case DistrictData.DistrictId.TokyoBay: return 3.1f;
+            case DistrictData.DistrictId.UenoPark: return 18.4f;
+            default: return 0f;
+        }
     }
 
     /// <summary>Cell root for a 500 m cell, created on demand under
