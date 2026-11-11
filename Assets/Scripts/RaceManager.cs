@@ -85,8 +85,17 @@ public class RaceManager : MonoBehaviour
     {
         RaceFinished = true;
         int raceSeconds = Mathf.RoundToInt(Time.time - raceStartTime);
-        int reward = 500 + Mathf.Max(0, totalLaps * 1000 - raceSeconds);
+        // Economy rebalance (2026-11-11, semi-final): race base 500 -> 1500
+        // (typical 3-lap race now pays ~$4,100 instead of ~$3,100).
+        int reward = 1500 + Mathf.Max(0, totalLaps * 1000 - raceSeconds);
         if (GameManager.Instance != null) GameManager.Instance.AddMoney(reward);
+        int position = GetPlayerPosition();
+        // Plain races award XP here (win +300, finish +100). Championship
+        // mode awards the same XP inside RecordRaceFinish, so don't
+        // double it for championship races.
+        if (GameManager.Instance == null
+            || GameManager.Instance.Mode != GameManager.GameMode.Championship)
+            PlayerProfile.RecordRace(position == 1, position == 1 ? 300 : 100);
         // Championship: record the finish so points advance, the season
         // can end and the season reward pays. Before this call the
         // championship never advanced (RecordRaceFinish had no callers)
@@ -98,7 +107,7 @@ public class RaceManager : MonoBehaviour
             && GameManager.Instance.Mode == GameManager.GameMode.Championship
             && Championship.Instance != null)
         {
-            Championship.Instance.RecordRaceFinish(GetPlayerPosition());
+            Championship.Instance.RecordRaceFinish(position);
         }
     }
 

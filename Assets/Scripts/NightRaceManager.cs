@@ -10,14 +10,15 @@ using UnityEngine;
 /// entry point GameManager.StartStreetRace() — RaceManager.cs is
 /// never edited. The rival is the roster car closest in top speed to
 /// your car, so the race is always fair. Finishing the race pays
-/// $1200 + 300 XP (polled from the public RaceManager.RaceFinished
+/// $1500 + 300 XP (polled from the public RaceManager.RaceFinished
 /// after the scene reload, keyed by the PlayerPrefs source flag so
 /// the car-meet manager never double-pays).</summary>
 public class NightRaceManager : MonoBehaviour
 {
     public static NightRaceManager Instance { get; private set; }
 
-    public const int NightRaceRewardMoney = 1200;
+    // Economy rebalance (2026-11-11, semi-final): $1,200 -> $1,500.
+    public const int NightRaceRewardMoney = 1500;
     public const int NightRaceRewardXP = 300;
     public const float OfferWindowSeconds = 15f;
 

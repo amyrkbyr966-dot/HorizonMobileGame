@@ -3,8 +3,8 @@ using UnityEngine;
 /// <summary>Time trial: pass all checkpoints in order, once, against the
 /// clock. Only active when GameManager.Mode is TimeTrial; in other modes
 /// it does nothing. Checkpoint.cs forwards every gate to this manager
-/// as well as to RaceManager. Beat targetTime to earn $800 (otherwise
-/// $200 for finishing), best time saved in PlayerPrefs.</summary>
+/// as well as to RaceManager. Beat targetTime to earn $1,500 (otherwise
+/// $500 for finishing), best time saved in PlayerPrefs.</summary>
 public class TimeTrialManager : MonoBehaviour
 {
     public static TimeTrialManager Instance { get; private set; }
@@ -54,7 +54,8 @@ public class TimeTrialManager : MonoBehaviour
         Finished = true;
         running = false;
         Success = Elapsed <= targetTime;
-        int reward = Success ? 800 : 200;
+        // Economy rebalance (2026-11-11, semi-final): beat $800 -> $1,500, finish $200 -> $500.
+        int reward = Success ? 1500 : 500;
         if (GameManager.Instance != null) GameManager.Instance.AddMoney(reward);
         float best = PlayerPrefs.GetFloat("BestTimeTrial", 0f);
         if (best <= 0f || Elapsed < best)

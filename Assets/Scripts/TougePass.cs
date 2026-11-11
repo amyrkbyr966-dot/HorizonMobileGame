@@ -33,8 +33,9 @@ public static class TougePass
     public const float PassLengthKm = 1.6f;
     public const float ElevationGainM = 220f;
     public const float NightRunMultiplier = 1.5f;
-    public const int NightRunBonusMoney = 1500;
-    public const int DayRunRewardMoney = 800;
+    // Economy rebalance (2026-11-11, semi-final): night $1,500 -> $2,000, day $800 -> $1,200.
+    public const int NightRunBonusMoney = 2000;
+    public const int DayRunRewardMoney = 1200;
 
     /// <summary>One control point of the pass centreline.</summary>
     public struct ControlPoint

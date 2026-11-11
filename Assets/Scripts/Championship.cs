@@ -70,7 +70,9 @@ public class Championship : MonoBehaviour
             PlayerIsChampion = true;
             for (int i = 0; i < RivalNames.Length; i++)
                 if (RivalPoints[i] > PlayerPoints) PlayerIsChampion = false;
-            int reward = 5000 + (PlayerIsChampion ? 3000 : 0);
+            // Economy rebalance (2026-11-11, semi-final): finisher $5,000 -> $4,000,
+            // champion bonus $3,000 -> $6,000 (champion season total $10,000).
+            int reward = 4000 + (PlayerIsChampion ? 6000 : 0);
             if (GameManager.Instance != null) GameManager.Instance.AddMoney(reward);
             PlayerProfile.AddXP(PlayerIsChampion ? 1000 : 400);
             var hud = FindFirstObjectByType<HUD>();

@@ -46,9 +46,10 @@ public class CollectibleManager : MonoBehaviour
         HuntFinished = true;
         if (GameManager.Instance != null && GameManager.Instance.Mode == GameManager.GameMode.Collectibles)
         {
-            GameManager.Instance.AddMoney(500);
+            // Economy rebalance (2026-11-11, semi-final): hunt bonus $500 -> $1,000.
+            GameManager.Instance.AddMoney(1000);
             var hud = FindFirstObjectByType<HUD>();
-            if (hud != null) hud.ShowMessage("All coins collected! +$500");
+            if (hud != null) hud.ShowMessage("All coins collected! +$1000");
         }
     }
 

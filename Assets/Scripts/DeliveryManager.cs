@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>Timed delivery missions: drive to a pickup point, then to a
-/// delivery point before the timer runs out. Reward = $300 + $5 per
+/// delivery point before the timer runs out. Reward = $500 + $10 per
 /// second left. Markers are created in code (no scene wiring needed).
 /// Attach to a GameObject in the Main scene.</summary>
 public class DeliveryManager : MonoBehaviour
@@ -91,7 +91,8 @@ public class DeliveryManager : MonoBehaviour
     void CompleteDelivery()
     {
         State = DeliveryState.Done;
-        int reward = 300 + Mathf.RoundToInt(TimeLeft) * 5;
+        // Economy rebalance (2026-11-11, semi-final): $300 + $5/s -> $500 + $10/s.
+        int reward = 500 + Mathf.RoundToInt(TimeLeft) * 10;
         if (GameManager.Instance != null) GameManager.Instance.AddMoney(reward);
         PlayerProfile.AddXP(150);
         if (marker != null) marker.SetActive(false);

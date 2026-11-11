@@ -6,7 +6,7 @@ using UnityEngine;
 /// DistrictData "Ring Highway" viewpoint marks). Pass a trap and
 /// your speed through it is recorded; hit all four traps inside one
 /// 10-minute window and the run is complete. Score = sum of the four
-/// trap speeds. Beat 200 km/h at every trap for the $2000 Wangan
+/// trap speeds. Beat 200 km/h at every trap for the $3000 Wangan
 /// bonus; any completed run pays $500. Best score is kept per car
 /// (PlayerPrefs "Wangan_Best_<carIndex>") so every car in the
 /// 55-car roster has its own leaderboard line to chase. Reads only
@@ -20,7 +20,8 @@ public class WanganRunManager : MonoBehaviour
     public const float RunWindowSeconds = 600f;
     public const float TrapRadius = 25f;
     public const float BonusSpeedKmh = 200f;
-    public const int BonusMoney = 2000;
+    // Economy rebalance (2026-11-11, semi-final): bonus $2,000 -> $3,000 (complete $500 kept).
+    public const int BonusMoney = 3000;
     public const int CompleteMoney = 500;
 
     /// <summary>Speed-trap gates on the ring highway (world XZ).</summary>

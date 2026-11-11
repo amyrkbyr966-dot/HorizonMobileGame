@@ -24,7 +24,10 @@ public static class UpgradeSystem
 
     // Cost to buy INTO level L (index 0 unused), before the car's
     // price multiplier is applied.
-    public static readonly int[] LevelCosts = new int[] { 0, 400, 800, 1400, 2200, 3200 };
+    // Economy rebalance (2026-11-11, semi-final): level costs 400/800/1400/2200/3200
+    // -> 300/600/1000/1600/2400 (sum $8,000 -> $5,900 per slot, -26%), so maxing
+    // one car costs roughly its own price instead of ~3x it.
+    public static readonly int[] LevelCosts = new int[] { 0, 300, 600, 1000, 1600, 2400 };
 
     /// <summary>Display name for the garage UI.</summary>
     public static string SlotName(UpgradeSlot slot)
@@ -125,7 +128,9 @@ public static class UpgradeSystem
     public static float CostMultiplier(int carIndex)
     {
         CarDef def = CarSelection.Cars[Mathf.Clamp(carIndex, 0, CarSelection.Cars.Length - 1)];
-        return 1f + def.price / 15000f;
+        // Economy rebalance (2026-11-11, semi-final): multiplier 1 + price/15,000
+        // -> 1 + price/20,000 (full-max Tourbillon $134,400 -> ~$80,000).
+        return 1f + def.price / 20000f;
     }
 
     public static int CostForNextLevel(int carIndex, UpgradeSlot slot)
