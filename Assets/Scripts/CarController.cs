@@ -438,6 +438,16 @@ public class CarController : MonoBehaviour
     void ReadInput()
     {
         float steer = Input.GetAxis("Horizontal");
+        // FIX (2026-11-11, semi-final): keyboard WASD did not reach the
+        // game in Build #7 (throttle stayed 0.00 while the touch GAS
+        // button worked) even though the InputManager axes exist and the
+        // handler is "Both". Belt-and-braces: read the raw keys directly
+        // as well, so A/D and the arrows always steer even if GetAxis
+        // returns 0 (focus / Input System quirk).
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            steer = -1f;
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            steer = 1f;
         float throttle = 0f;
         float brake = 0f;
 
@@ -449,6 +459,12 @@ public class CarController : MonoBehaviour
         }
 
         float keyThrottle = Input.GetAxis("Vertical");
+        // (Same fix as the steering above — raw W/S/arrows as a fallback
+        // so the car always moves on keyboard even if GetAxis is 0.)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            keyThrottle = 1f;
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            keyThrottle = -1f;
         bool keyBrake = Input.GetKey(KeyCode.Space);
         if (keyThrottle > 0f) throttle = Mathf.Max(throttle, keyThrottle);
         else if (keyThrottle < 0f) { brake = Mathf.Max(brake, -keyThrottle); keyBrake = true; }

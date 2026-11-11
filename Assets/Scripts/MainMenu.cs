@@ -106,8 +106,16 @@ public class MainMenu : MonoBehaviour
         CarDef def = CarSelection.Cars[previewIndex];
         if (carNameText != null) carNameText.text = def.carName;
         if (carStatsText != null)
-            carStatsText.text = Mathf.RoundToInt(def.topSpeedKmh) + " km/h  -  Accel x" + def.acceleration.ToString("0.00")
-                + "  -  Handling x" + def.handling.ToString("0.00");
+        {
+            // FIX (2026-11-11, semi-final): the stats string (43 chars)
+            // wrapped to a second line ("x1.12") that overlapped the
+            // SELECTED/price text below it — the stats box is 420 px at
+            // fontSize 26 (~35 chars/line). Compact one-line format +
+            // fontSize 21 so it always fits on one line.
+            carStatsText.text = Mathf.RoundToInt(def.topSpeedKmh) + " km/h  Accel x" + def.acceleration.ToString("0.00")
+                + "  Handling x" + def.handling.ToString("0.00");
+            carStatsText.fontSize = 21;
+        }
         if (carPriceText != null)
         {
             if (CarSelection.IsUnlocked(previewIndex))

@@ -10,7 +10,13 @@ public class CameraFollow : MonoBehaviour
     public float smoothSpeed = 6f;
     public float lookAhead = 8f;
     public float baseFov = 60f;
-    public float maxFov = 75f;
+    // FIX (2026-11-11, semi-final): the old maxFov 75 made the car
+    // shrink to a dot at top speed (259 km/h reads as a speck — the
+    // wide angle pulls the whole world in). Cap the widening at 68 and
+    // make it ramp more gently (speed/80) so the car stays readable
+    // while still giving a sense of speed.
+    public float maxFov = 68f;
+    public float fovSpeedDivisor = 80f;
 
     Camera cam;
 
@@ -41,7 +47,7 @@ public class CameraFollow : MonoBehaviour
         {
             Rigidbody rb = target.GetComponent<Rigidbody>();
             float speed = rb != null ? rb.linearVelocity.magnitude : 0f;
-            cam.fieldOfView = Mathf.Lerp(baseFov, maxFov, Mathf.Clamp01(speed / 55f));
+            cam.fieldOfView = Mathf.Lerp(baseFov, maxFov, Mathf.Clamp01(speed / fovSpeedDivisor));
         }
     }
 }

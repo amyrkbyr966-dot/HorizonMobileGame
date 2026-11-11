@@ -39,15 +39,22 @@ public class Minimap : MonoBehaviour
             if (panelObj != null) minimapPanel = panelObj.GetComponent<RectTransform>();
         }
         if (minimapPanel == null) minimapPanel = BuildPanel();
-        // FIX (2026-11-07, race blocker #1): the HUD prefab's MinimapPanel
-        // is anchored top-LEFT (anchor 0,1) with pivot (1,1) and
-        // anchoredPosition (100,-240), so its centre lands at screen
-        // x ~10 and the western half of the panel hangs off-screen: the
-        // western checkpoints (CP0/CP4/CP5) and the player dot (when west)
-        // were invisible. Force the panel fully on-screen, top-right,
-        // whatever the prefab says — same placement BuildPanel() uses.
+        // FIX (2026-11-11, semi-final): the minimap did not render in
+        // Build #7 (0 green player-dot pixels even at spawn, though the
+        // scene wiring is correct — active, enabled, under HUDCanvas).
+        // Root cause could not be determined from code inspection, so
+        // make it bulletproof: force the panel active and to the FRONT
+        // (SetAsLastSibling) so no other HUD element can draw over it,
+        // make the background more opaque (0.6) so the panel reads as a
+        // dark square even over the dark city, and log clearly so the
+        // next build's Player.log proves whether Start() ran.
+        minimapPanel.gameObject.SetActive(true);
+        minimapPanel.SetAsLastSibling();
+        var panelImg = minimapPanel.GetComponent<Image>();
+        if (panelImg != null) panelImg.color = new Color(0f, 0f, 0f, 0.6f);
         NormalizePanel(minimapPanel);
-        // FIX (2026-11-07, race blocker #1b): the HUD prefab ships
+        Debug.Log("[Minimap] initialized: panel active, brought to front, worldSize=" + worldSize);
+        // FIX (2026-11-11, semi-final): the HUD prefab ships
         // three STATIC dots as children of MinimapPanel
         // (MinimapPlayerDot / MinimapTrafficDot / MinimapCheckpointDot)
         // that nothing ever moves — they sit frozen, one of them on top
@@ -60,7 +67,7 @@ public class Minimap : MonoBehaviour
         {
             if (child.name.Contains("Dot")) child.gameObject.SetActive(false);
         }
-        playerDot = BuildDot(minimapPanel, new Color(0.1f, 0.9f, 0.2f), 12f);
+        playerDot = BuildDot(minimapPanel, new Color(0.1f, 0.9f, 0.2f), 16f);
         RefreshTargets();
     }
 
@@ -73,17 +80,17 @@ public class Minimap : MonoBehaviour
             RefreshTargets();
         }
         if (player != null && playerDot != null)
-            playerDot.rectTransform.anchoredPosition = WorldToMap(player.position);
+            playerDot.rectTransform.anchoredPosition = ClampToPanel(WorldToMap(player.position));
         for (int i = 0; i < trafficDots.Count && i < traffic.Count; i++)
         {
             if (traffic[i] == null) continue;
-            trafficDots[i].rectTransform.anchoredPosition = WorldToMap(traffic[i].position);
+            trafficDots[i].rectTransform.anchoredPosition = ClampToPanel(WorldToMap(traffic[i].position));
             trafficDots[i].gameObject.SetActive(true);
         }
         for (int i = 0; i < checkpointDots.Count && i < checkpoints.Count; i++)
         {
             if (checkpoints[i] == null) continue;
-            checkpointDots[i].rectTransform.anchoredPosition = WorldToMap(checkpoints[i].position);
+            checkpointDots[i].rectTransform.anchoredPosition = ClampToPanel(WorldToMap(checkpoints[i].position));
         }
     }
 
@@ -118,6 +125,17 @@ public class Minimap : MonoBehaviour
         float x = (worldPos.x / worldSize + 0.5f) * panelSize - panelSize * 0.5f;
         float y = (worldPos.z / worldSize + 0.5f) * panelSize - panelSize * 0.5f;
         return new Vector2(x, y);
+    }
+
+    /// <summary>Clamp a dot to the panel so it never flies off the map.
+    /// FIX (2026-11-11, semi-final): after driving ~6 km from spawn the
+    /// player dot landed at y=±140 — outside the 180 px panel — so the
+    /// minimap looked empty at speed. Clamping pins the dot to the
+    /// panel edge, which is the correct minimap behaviour.</summary>
+    Vector2 ClampToPanel(Vector2 p)
+    {
+        float half = panelSize * 0.5f - 8f;
+        return new Vector2(Mathf.Clamp(p.x, -half, half), Mathf.Clamp(p.y, -half, half));
     }
 
     /// <summary>Pin the panel fully on-screen, top-right: anchor and
