@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     container:
-      image: unityci/editor:ubuntu-6000.3.28f1-linux-il2cpp-3.0.0
+      image: unityci/editor:ubuntu-6000.3.28f1-linux-il2cpp-3.2.2
     steps:
       - name: Checkout (with LFS)
         uses: actions/checkout@v4
