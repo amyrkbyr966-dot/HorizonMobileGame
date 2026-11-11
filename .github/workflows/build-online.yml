@@ -1,0 +1,115 @@
+# Linux build via ONLINE Personal activation (no .ulf needed).
+#
+# WHY THIS FILE EXISTS (2026-11-11)
+#   The GameCI unity-builder workflow (build.yml) cannot run for this
+#   project: it requires a UNITY_LICENSE (.ulf) secret, and Unity no
+#   longer issues .ulf files for Personal licenses (manual/offline
+#   activation is closed to Personal — license.unity3d.com/manual
+#   returns "You are not eligible to activate your license offline").
+#   The only headless route for a free Personal account is ONLINE
+#   activation with the Unity account email + password. This workflow
+#   does that: it runs the Unity Editor CLI directly (inside the
+#   unityci/editor Docker image, which has Unity 6000.3.28f1 +
+#   Linux IL2CPP pre-installed), signs in with UNITY_EMAIL +
+#   UNITY_PASSWORD to obtain a Personal entitlement, then runs the
+#   project's BuildLinuxTextureFix.Build method. No GameCI builder,
+#   no .ulf, no serial.
+#
+# SECRETS REQUIRED (set by the user on GitHub — Settings > Secrets
+# and variables > Actions). The workflow FAILS at activation until
+# these hold the REAL Unity account values (the current repo secrets
+# are placeholders):
+#   UNITY_EMAIL    — the email of the Unity account
+#   UNITY_PASSWORD — the password of the Unity account
+# Do NOT set UNITY_LICENSE or UNITY_SERIAL for this workflow.
+#
+# ACTIVATION LIMIT
+#   Each GitHub runner counts as a distinct machine against the
+#   Personal license activation limit. Do not run this workflow on
+#   every push — trigger it manually (workflow_dispatch) only when a
+#   build is actually needed, and return the license is NOT done
+#   automatically (the entitlement stays on the ephemeral runner,
+#   which is discarded, so the seat is freed when the runner dies).
+#
+# WHAT IT DOES
+#   1. Checks out the repo (with Git LFS for the 3 map files >100 MB).
+#   2. Activates Unity Personal ONLINE with UNITY_EMAIL/PASSWORD.
+#   3. Builds the Linux x86_64 player with BuildLinuxTextureFix.Build.
+#   4. Launches the built game headless under Xvfb, screenshots the
+#      menu, uploads screenshots + Player.log. The built binary (~1.9 GB)
+#      is NOT uploaded (GitHub free artifact storage is 500 MB).
+
+name: Linux build (online activation)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-linux-online:
+    name: Build Linux (online activation) + smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    container:
+      image: unityci/editor:ubuntu-6000.3.28f1-linux-il2cpp-3.0.0
+    steps:
+      - name: Checkout (with LFS)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Free disk space
+        run: |
+          df -h
+          rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
+          df -h
+
+      - name: Activate Unity Personal (online)
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        run: |
+          if [ -z "$UNITY_EMAIL" ] || [ -z "$UNITY_PASSWORD" ]; then
+            echo "UNITY_EMAIL / UNITY_PASSWORD secrets are empty — set the REAL Unity account values in repo Settings > Secrets and variables > Actions." >&2
+            exit 1
+          fi
+          # Online sign-in activates the Personal entitlement on this runner.
+          # -batchmode -quit with -username/-password performs the activation.
+          /opt/unity/Editor/Unity -batchmode -nographics -username "$UNITY_EMAIL" -password "$UNITY_PASSWORD" -quit -logFile /tmp/unity-activation.log || true
+          echo "--- activation log (last 30 lines) ---"
+          tail -n 30 /tmp/unity-activation.log || true
+          # Fail fast if the license did not activate.
+          ls -la ~/.config/unity3d/Unity/ 2>/dev/null || true
+
+      - name: Build Linux player
+        run: |
+          mkdir -p /home/hatch/workspace
+          /opt/unity/Editor/Unity -batchmode -nographics -projectPath "$GITHUB_WORKSPACE" -executeMethod BuildLinuxTextureFix.Build -quit -logFile /tmp/unity-build.log || true
+          echo "--- build log (last 40 lines) ---"
+          tail -n 40 /tmp/unity-build.log || true
+          BIN=/home/hatch/workspace/HorizonMobileGame-Linux-TextureFix/HorizonMobile.x86_64
+          test -x "$BIN"
+          ls -lh "$BIN"
+
+      - name: Smoke test under Xvfb (launch + screenshot the menu)
+        run: |
+          apt-get update -qq
+          apt-get install -y -qq xvfb imagemagick > /dev/null
+          BIN=/home/hatch/workspace/HorizonMobileGame-Linux-TextureFix/HorizonMobile.x86_64
+          mkdir -p smoke
+          cp /tmp/unity-build.log smoke/ 2>/dev/null || true
+          xvfb-run -a -s "-screen 0 1280x720x24" "$BIN" -logFile smoke/Player.log > smoke/run.log 2>&1 &
+          APP_PID=$!
+          sleep 90
+          import -window root smoke/menu-90s.png || true
+          sleep 60
+          import -window root smoke/menu-150s.png || true
+          kill "$APP_PID" || true
+          wait "$APP_PID" || true
+          ls -lh smoke/
+
+      - name: Upload smoke screenshots + logs (small artifacts only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-smoke-online-${{ github.sha }}
+          path: smoke/
+          if-no-files-found: warn
