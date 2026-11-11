@@ -5074,12 +5074,108 @@
    "scale": 1.0,
    "rot": 44.9,
    "zone": "Residential_Sakura"
+  },
+  {
+   "x": -14.0,
+   "z": -40.0,
+   "type": "sakura",
+   "scale": 1.05,
+   "rot": 15.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -14.0,
+   "z": 20.0,
+   "type": "sakura",
+   "scale": 1.12,
+   "rot": 62.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -14.0,
+   "z": 80.0,
+   "type": "sakura",
+   "scale": 1.19,
+   "rot": 109.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -14.0,
+   "z": 140.0,
+   "type": "sakura",
+   "scale": 1.05,
+   "rot": 156.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -14.0,
+   "z": 200.0,
+   "type": "sakura",
+   "scale": 1.12,
+   "rot": 203.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": -14.0,
+   "z": 260.0,
+   "type": "sakura",
+   "scale": 1.19,
+   "rot": 250.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": 14.0,
+   "z": -10.0,
+   "type": "sakura",
+   "scale": 1.1,
+   "rot": 200.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": 14.0,
+   "z": 50.0,
+   "type": "sakura",
+   "scale": 1.16,
+   "rot": 237.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": 14.0,
+   "z": 110.0,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 274.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": 14.0,
+   "z": 170.0,
+   "type": "sakura",
+   "scale": 1.1,
+   "rot": 311.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": 14.0,
+   "z": 230.0,
+   "type": "sakura",
+   "scale": 1.16,
+   "rot": 348.0,
+   "zone": "Shibuya_Sakura"
+  },
+  {
+   "x": 14.0,
+   "z": 290.0,
+   "type": "sakura",
+   "scale": 1.22,
+   "rot": 385.0,
+   "zone": "Shibuya_Sakura"
   }
  ],
  "tree_counts": {
-  "total": 585,
+  "total": 597,
   "green": 430,
-  "sakura": 155,
+  "sakura": 167,
   "tris_estimate": 221940
  }
 }
