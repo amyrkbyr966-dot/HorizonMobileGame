@@ -103,10 +103,50 @@ public class MainMenu : MonoBehaviour
         // Semi-final (2026-11-11): show the real Shibuya night photo
         // as the menu background instead of the old flat 3D diorama.
         SetupMenuBackground();
+        // Ready-made menu (2026-11-11): style the flat coloured
+        // rectangles into real rounded buttons using the downloaded
+        // free Kenney UI button art (CC0) — the UnityGameTemplate
+        // menu art is plain grey rectangles, so the Kenney styled
+        // button (rounded corners, border, highlight) is used instead.
+        StyleMenuButtons();
         // Semi-final (2026-11-11): live 3D car preview between the
         // < > arrows (was an empty grey box).
         SetupCarPreview();
         RefreshMenu();
+    }
+
+    /// <summary>Style the menu's flat coloured rectangles into real
+    /// rounded buttons. Loads the downloaded free Kenney button art
+    /// (CC0, rounded corners + border + highlight) and applies it as
+    /// a 9-sliced sprite to every menu button, keeping each button's
+    /// own colour as the tint so the colour-coding survives. If the
+    /// art is missing the buttons keep their flat colour (no worse).</summary>
+    void StyleMenuButtons()
+    {
+        Texture2D tex = Resources.Load<Texture2D>("UI/Menu/button-grey-rect");
+        if (tex == null) return;
+        // 9-slice border (16 px) so the rounded corners don't stretch.
+        Sprite btn = Sprite.Create(tex, new Rect(0f, 0f, tex.width, tex.height),
+            new Vector2(0.5f, 0.5f), 100f, 0, SpriteMeshType.FullRect,
+            new Vector4(16f, 16f, 16f, 16f));
+        if (btn == null) return;
+        string[] names = new string[]
+        {
+            "RaceButton", "FreeRoamButton", "TimeTrialButton",
+            "CollectiblesButton", "StreetRaceButton", "DeliveryButton",
+            "ChampionshipButton", "BuySelectButton", "GarageButton",
+            "SettingsQualityButton", "SettingsLanguageButton",
+            "QuitButton", "PrevCarButton", "NextCarButton"
+        };
+        foreach (string n in names)
+        {
+            var go = GameObject.Find(n);
+            if (go == null) continue;
+            var img = go.GetComponent<UnityEngine.UI.Image>();
+            if (img == null) continue;
+            img.sprite = btn;
+            img.type = UnityEngine.UI.Image.Type.Sliced;
+        }
     }
 
     /// <summary>Live 3D car preview: a small stage far above the menu
